@@ -1,17 +1,18 @@
 import React, { Component } from "react"
 
+
 export default class Welcome extends Component {
     render(){
         return(
             <section>
                 <h1>My Map Story</h1>
-                <h3>please login or sign up</h3>
+                <h3>please login or register</h3>
                 <button onClick = { () => {
-                    this.props.history.push("/welcome/login")
-                }}>sign in</button>
+                    this.props.history.push("/login")
+                }}>Login</button>
                 <button onClick = { () => {
-                    this.props.history.push("/welcome/register")
-                }}>sign up</button>
+                    this.props.history.push("/register")
+                }}>Register</button>
             </section>
         )
     }
