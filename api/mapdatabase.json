@@ -1,0 +1,27 @@
+{
+   "users":
+   [ {
+       "id": 1,
+       "username": "Scott",
+       "email": "scott47@gmail.com",
+       "password": "green"
+       }
+     ],
+
+    "basemap": [ {
+        "id": 1,
+        "userId": 1,
+        "topoVector": "url",
+        "satellite": "url",
+        "streetsNightVector": "url"
+        }
+    ],
+    "locations": [ {
+        "id": 1,
+        "userId": 1,
+        "name": "Nashville",
+        "latitude": 36.1627000,
+        "longitude": -086.7816000
+    }
+]
+}
