@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import UserHandler from "../apiManager/UserHandler"
 
 export default class Register extends Component {
   state = {

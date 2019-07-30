@@ -1,14 +1,15 @@
 {
-   "users":
+   "user":
    [ {
        "id": 1,
-       "username": "Scott",
+       "name": "Scott",
+       "username": "atomicno47",
        "email": "scott47@gmail.com",
        "password": "green"
        }
      ],
 
-    "basemap": [ {
+    "basemaps": [ {
         "id": 1,
         "userId": 1,
         "topoVector": "url",

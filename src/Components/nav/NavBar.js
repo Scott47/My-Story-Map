@@ -1,45 +1,26 @@
 import React, { Component } from "react"
-import { Link, withRouter } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 
 class NavBar extends Component {
-  state = {
-    saveDisabled: false
-  }
-
-  logOut = () => {
-    sessionStorage.clear()
-    this.props.history.push("/welcome/login")
-  }
-
     render() {
         return (
-            <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
-                <ul className="nav nav-pills nav-fill">
+            <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
+                <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Dashboard</Link>
+                        <Link className="nav-link" to="/">Create Story Map</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/stories">Stories</Link>
+                        <Link className="nav-link" to="/stories">Story Maps</Link>
                     </li>
                     <li className="nav-item">
-                      <input type="text" placeholder="Search" id="searchBar" className="search form-control" onKeyPress={this.props.inputEvent} ></input>
+                        <Link className="nav-link" to="/mystories">My Story Maps</Link>
                     </li>
-                    <li className="nav-item">
-                      <button className="logout-btn btn"
-                      onClick={() => {
-                        this.setState({saveDisabled: true})
-                        this.logOut()
-                      }}
-                      style={{display: sessionStorage.getItem("userId") ? "" : "none"}}
-                      >
-                        Log-Out
-                      </button>
-                    </li>
-
                 </ul>
             </nav>
         )
     }
 }
+
+export default NavBar

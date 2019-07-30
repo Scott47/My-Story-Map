@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Welcome from "./Components/welcome/Welcome"
-import ApplicationViews from './ApplicationViews';
-
+import ApplicationViews from './components/ApplicationViews';
+import NavBar from "./components/nav/NavBar"
+import "./Map.css"
 
 
 class Map extends Component {
 render() {
   return  (
     <React.Fragment>
-      <Welcome />
+      <NavBar />
       <ApplicationViews />
     </React.Fragment>
   );
