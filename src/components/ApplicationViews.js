@@ -31,21 +31,13 @@ class ApplicationViews extends Component {
             return <Welcome users={this.state.users} {...props} />;
           }} />
         <Route
-          path="/stories" render={props => {
-            return <Login users={this.state.users} {...props} />;
-          }} />
-        <Route
-          path="/mystories" render={props => {
-            return <Login users={this.state.users} {...props} />;
-          }} />
-        {/* <Route
           path="/login" render={props => {
             return <Login users={this.state.users} {...props} />;
           }} />
         <Route
           path="/register" render={props => {
             return <Register users={this.state.users} {...props} />;
-          }} /> */}
+          }} />
       </React.Fragment>
       )
   }

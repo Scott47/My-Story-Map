@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
 
-// this will give us the user object in a usable form
-// let item = sessionStorage.getItem("credentials")
-//         let newItem = JSON.parse(item)
+
 
 export default class Login extends Component {
   state = {
@@ -18,7 +16,7 @@ export default class Login extends Component {
     this.setState(stateToChange);
   };
 
-  // Simplistic handler for login submit
+  // Handles login when inputs are submitted
   handleLogin = event => {
     event.preventDefault();
     let temp = ""
@@ -35,7 +33,7 @@ export default class Login extends Component {
       sessionStorage.setItem("userId",findUser.id)
       this.props.history.push("/")
     } else {
-      alert("username or password was incorect. please enter the right password or username");
+      alert("username or password was incorrect. please enter the right password or username");
     }
   };
 
