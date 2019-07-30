@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from "react-router-dom"
 import './index.css';
 import Map from './Map';
+import ApplicationViews from "./components/ApplicationViews"
 import * as serviceWorker from './serviceWorker';
 
 
@@ -10,6 +11,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <Router>
         <Map />
+        <ApplicationViews />
     </Router>
     , document.getElementById('root'))
 

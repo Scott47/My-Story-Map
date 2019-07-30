@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Welcome from "./components/welcome/Welcome"
 import ApplicationViews from './components/ApplicationViews';
-import NavBar from "./nav/NavBar"
+import NavBar from "./components/nav/NavBar"
+import "./Map.css"
 
 
 class Map extends Component {
@@ -9,7 +9,6 @@ render() {
   return  (
     <React.Fragment>
       <NavBar />
-      <Welcome />
       <ApplicationViews />
     </React.Fragment>
   );
