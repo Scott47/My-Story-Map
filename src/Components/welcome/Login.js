@@ -1,33 +1,31 @@
 import React, { Component } from "react";
 
 
-
-
 export default class Login extends Component {
   state = {
     username: "",
     password: ""
   };
 
-  // Update state whenever an input field is edited
+  // Updates state when input fields are submitted
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
-  // Handles login when inputs are submitted
+  // Handles login input submission
   handleLogin = event => {
     event.preventDefault();
-    let temp = ""
+    let home = ""
     let findUser = this.props.users.find(user => {
       if (
         user.username === this.state.username &&
         user.password === this.state.password
       ) {
-        temp = user;
+        home = user;
       }
-      return temp
+      return home
     });
     if (findUser) {
       sessionStorage.setItem("userId",findUser.id)
