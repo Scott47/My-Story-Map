@@ -9,6 +9,8 @@ import Satellite from "./basemaps/Satellite"
 import Topo from "./basemaps/Topo"
 import Streets from "./basemaps/StreetVector"
 import StreetNight from "./basemaps/StreetNight"
+import NatGeo from "./basemaps/NatGeo"
+import Hybrid from "./basemaps/Hybrid"
 
 
 class ApplicationViews extends Component {
@@ -86,6 +88,20 @@ class ApplicationViews extends Component {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
                   <StreetNight users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/natgeo" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <NatGeo users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/hybrid" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Hybrid users={this.state.users} />
                   </div>
             )
           }}/>
