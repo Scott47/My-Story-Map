@@ -4,9 +4,13 @@ import Welcome from "./welcome/Welcome"
 import Login from "./welcome/Login"
 import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
-import EsriMap from "./map/EsriMap";
-
-
+import { WebMap, Scene } from '@esri/react-arcgis';
+import Satellite from "./basemaps/Satellite"
+import Topo from "./basemaps/Topo"
+import Streets from "./basemaps/StreetVector"
+import StreetNight from "./basemaps/StreetNight"
+import NatGeo from "./basemaps/NatGeo"
+import Hybrid from "./basemaps/Hybrid"
 
 
 class ApplicationViews extends Component {
@@ -59,19 +63,64 @@ class ApplicationViews extends Component {
             );
           }}
         />
-                <Route
-          path="/sterco" render={props => {
-            return (
-              <EsriMap users={this.state.users}
-                {...props}
-              />
-            );
-          }}
-        />
+        <Route path="/topo" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Topo users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/satellite" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Satellite users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/streets" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Streets users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/streetnight" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <StreetNight users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/natgeo" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <NatGeo users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/hybrid" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Hybrid users={this.state.users} />
+                  </div>
+            )
+          }}/>
+
+
+
+          {/* <Route path="/base"
+        style={{ width: '100vw', height: '100vh' }}
+        mapProperties={{ basemap: 'satellite' }}
+        viewProperties={{
+            center: [-122.4443, 47.2529],
+            zoom: 6
+        }}
+    /> */}
       </React.Fragment>
       )
   }
 
 }
+
 
 export default withRouter(ApplicationViews)
