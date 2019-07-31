@@ -1,38 +1,16 @@
-// import React from 'react';
-// import { Scene } from '@esri/react-arcgis';
-
-// export default (props) => (
-//     <Scene
-//         style={{ width: '100vw', height: '100vh' }}
-//         mapProperties={{ basemap: 'satellite' }}
-//         viewProperties={{
-//             center: [-122.4443, 47.2529],
-//             zoom: 6
-//         }}
-//     />
-// )
 import React from 'react';
-import { Map } from '@esri/react-arcgis';
+import { Scene } from '@esri/react-arcgis';
 
-export default class EsriMap extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            map: null,
-            view: null
-        };
-
-        this.handleMapLoad = this.handleMapLoad.bind(this)
-    }
-
-    render() {
-        return <Map className="full-screen-map" onLoad={this.handleMapLoad} />;
-    }
-
-    handleMapLoad(map, view) {
-        this.setState({ map, view });
-    }
-}
+export default (props) => (
+    <Scene
+        style={{ width: '100vw', height: '100vh' }}
+        mapProperties={{ basemap: 'topo-vector' }}
+        viewProperties={{
+            center: [ -86.767960, 36.174465 ],
+            zoom: 12
+        }}
+    />
+)
 
 
 

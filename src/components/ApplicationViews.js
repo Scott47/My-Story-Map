@@ -5,11 +5,10 @@ import Login from "./welcome/Login"
 import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
 import { WebMap, Scene } from '@esri/react-arcgis';
-import EsriMap from "./map/EsriMap"
-import Bermuda from "./map/Bermuda"
-
-
-
+import Satellite from "./basemaps/Satellite"
+import Topo from "./basemaps/Topo"
+import Streets from "./basemaps/StreetVector"
+import StreetNight from "./basemaps/StreetNight"
 
 
 class ApplicationViews extends Component {
@@ -62,16 +61,36 @@ class ApplicationViews extends Component {
             );
           }}
         />
-                <Route path="/sterco" render={props => {
+        <Route path="/topo" render={props => {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
-                  <Bermuda users={this.state.users} />
+                  <Topo users={this.state.users} />
                   </div>
-
-              //     id="6712da5c872c44deaf24499e6f6c2d2b" />
-              // </div>
             )
-          }} />
+          }}/>
+          <Route path="/satellite" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Satellite users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/streets" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <Streets users={this.state.users} />
+                  </div>
+            )
+          }}/>
+          <Route path="/streetnight" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <StreetNight users={this.state.users} />
+                  </div>
+            )
+          }}/>
+
+
 
           {/* <Route path="/base"
         style={{ width: '100vw', height: '100vh' }}
