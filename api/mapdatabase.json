@@ -1,34 +1,59 @@
 {
-   "user":
-   [ {
-       "id": 1,
-       "name": "Scott",
-       "username": "atomicno47",
-       "email": "scott47@gmail.com",
-       "password": "green"
-       }
-     ],
-
-    "basemaps": [ {
-        "id": 1,
-        "userId": 1,
-        "topoVector": "url",
-        "satellite": "url",
-        "streetsNightVector": "url"
-        }
-    ],
-    "locations": [ {
-        "id": 1,
-        "userId": 1,
-        "name": "Nashville",
-        "latitude": "36.1627000",
-        "longitude": "-086.7816000"
+  "users": [
+    {
+      "id": 1,
+      "name": "Scott",
+      "username": "atomicno47",
+      "email": "scott47@gmail.com",
+      "password": "green"
+    },
+    {
+      "name": "Emily",
+      "username": "Emily",
+      "password": "nim",
+      "email": "eclaire.lemmon@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Pelon",
+      "username": "Plata",
+      "password": "green",
+      "email": "scosilver@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Karla",
+      "username": "k",
+      "password": "green",
+      "email": "scottsilver47@gmail.com",
+      "id": 4
     }
-    ],
-    "stories": [ {
-        "id": 1,
-        "userId": 1,
-        "name": "Nashville"
+  ],
+  "basemaps": [
+    {
+      "id": 1,
+      "userId": 1,
+      "topoVector": "url",
+      "satellite": "url",
+      "streetsNightVector": "url"
     }
-]
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "userId": 1,
+      "storyId": 1,
+      "name": "Nashville",
+      "latitude": "36.1627000",
+      "longitude": "-086.7816000"
+    }
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "userId": 1,
+      "basemapId": 1,
+      "name": "Nashville"
+    }
+  ]
 }

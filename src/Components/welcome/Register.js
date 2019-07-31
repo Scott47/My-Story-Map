@@ -3,32 +3,31 @@ import UserHandler from "../apiManager/UserHandler"
 
 export default class Register extends Component {
   state = {
+    name: "",
     username: "",
     password: "",
     email: ""
   };
 
 
-
-  // Update state whenever an input field is edited
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
-  // Simplistic handler for login submit
+  // handles registration submission
   handleRegister = event => {
     event.preventDefault();
-    let temp = ""
+    let home = ""
     let findUser = this.props.users.find(user => {
       if (
         user.username === this.state.username ||
         user.email === this.state.email
       ) {
-        temp = user;
+        home = user;
       }
-      return temp
+      return home
     });
     if (findUser) {
       console.log("if ",findUser)
@@ -57,6 +56,13 @@ export default class Register extends Component {
       <div>
         <h1>Register</h1>
         <form onSubmit={this.handleRegister}>
+        <input
+            onChange={this.handleFieldChange}
+            type="text"
+            placeholder="Name"
+            id="name"
+            className="form-control"
+          />
           <input
             onChange={this.handleFieldChange}
             type="text"
