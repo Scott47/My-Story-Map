@@ -32,10 +32,23 @@
   "basemaps": [
     {
       "id": 1,
-      "userId": 1,
-      "topoVector": "url",
-      "satellite": "url",
-      "streetsNightVector": "url"
+      "name": "topoVector",
+    },
+    {
+      "id": 2,
+      "name": "satellite"
+    },
+    {
+        "id": 3,
+      "name": "streetsNightVector"
+    },
+    {
+        "id": 4,
+        "name": "streetsVector"
+    },
+    {
+        "id": 5,
+        "name": "NatGeo"
     }
   ],
   "locations": [
