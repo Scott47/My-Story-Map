@@ -1,16 +1,18 @@
-import { Route, withRouter } from 'react-router-dom'
+import { Route, withRouter, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
 import Welcome from "./welcome/Welcome"
 import Login from "./welcome/Login"
 import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
-import { WebMap, Scene } from '@esri/react-arcgis';
+import StoryHandler from "./apiManager/StoryHandler"
 import Satellite from "./basemaps/Satellite"
 import Topo from "./basemaps/Topo"
 import Streets from "./basemaps/StreetVector"
 import StreetNight from "./basemaps/StreetNight"
 import NatGeo from "./basemaps/NatGeo"
 import Hybrid from "./basemaps/Hybrid"
+import StoryList from "./stories/StoryList"
+import DashboardList from "./dashboard/DashboardList"
 
 
 class ApplicationViews extends Component {
@@ -40,14 +42,37 @@ class ApplicationViews extends Component {
           users: users
         })
       );
-
+  addStory = story =>
+    StoryHandler.post(story)
+      .then(() => StoryHandler.getAll())
+      .then(stories => {
+        this.setState({
+          stories: stories
+        });
+      });
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   render () {
       return (
-        <React.Fragment >
+        <React.Fragment>
+        <Route
+          exact
+          path="/"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return (<DashboardList
+                {...props}
+                users={this.state.users}
+                stories={this.state.stories}
+                />
+              )
+            } else {
+              return <Redirect to="/welcome" />
+            }
+          }} />
+
        <Route
-          exact path="/" render={props => {
+          exact path="/welcome" render={props => {
             return <Welcome users={this.state.users} {...props} />;
           }} />
         <Route
@@ -105,21 +130,16 @@ class ApplicationViews extends Component {
                   </div>
             )
           }}/>
-
-
-
-          {/* <Route path="/base"
-        style={{ width: '100vw', height: '100vh' }}
-        mapProperties={{ basemap: 'satellite' }}
-        viewProperties={{
-            center: [-122.4443, 47.2529],
-            zoom: 6
-        }}
-    /> */}
+          <Route path="/stories" render={props => {
+            return(
+              <div style={{ width: '100vw', height: '100vh' }}>
+                  <StoryList stories={this.state.stories} />
+                  </div>
+            )
+          }}/>
       </React.Fragment>
       )
   }
-
 }
 
 
