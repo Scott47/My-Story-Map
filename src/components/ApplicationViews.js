@@ -13,6 +13,8 @@ import NatGeo from "./basemaps/NatGeo"
 import Hybrid from "./basemaps/Hybrid"
 import StoryList from "./stories/StoryList"
 import DashboardList from "./dashboard/DashboardList"
+import Story from './stories/Story';
+import BaseMapHandler from './apiManager/BaseMapHandler';
 
 
 class ApplicationViews extends Component {
@@ -32,6 +34,10 @@ class ApplicationViews extends Component {
 
     UserHandler.getAll()
     .then(users => this.setState({ users: users }))
+    StoryHandler.getAll()
+    .then(stories => this.setState({ stories: stories }))
+    BaseMapHandler.getAll()
+    .then(basemaps => this.setState({ basemaps: basemaps }))
   }
 
   addUser = user =>
@@ -50,6 +56,7 @@ class ApplicationViews extends Component {
           stories: stories
         });
       });
+
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   render () {
@@ -133,7 +140,7 @@ class ApplicationViews extends Component {
           <Route path="/stories" render={props => {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
-                  <StoryList stories={this.state.stories} />
+                  <StoryList stories={this.state.stories} basemaps={this.state.basemaps}/>
                   </div>
             )
           }}/>

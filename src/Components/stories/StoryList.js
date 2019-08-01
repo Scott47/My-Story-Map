@@ -1,23 +1,43 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
+import { Scene } from "@esri/react-arcgis";
 
 class StoryList extends Component {
-    render() {
-        return (
-            <section className="stories">
+  render() {
+    return (
+      <section className="stories">
+        {this.props.stories.map(story => (
+          <div key={story.id} className="card card--stories">
+            <h5>{story.name}</h5>
             {
-                this.props.stories.map(stories =>
-                    <div key={stories.id} className="card card--stories">
-                        <h5>{stories.name}</h5>
-                    </div>
-                )
-            }
-            </section>
-        )
-    }
+                this.props.basemaps.filter(basemap => basemap.id === story.basemapId).map(basemap => (
+            <Scene
+              style={{ width: "100vw", height: "100vh" }}
+              key={story.basemapId}
+              mapProperties={{ basemap: basemap.name }}
+              viewProperties={{
+                center: [ -86.767960, 36.174465 ],
+                zoom: 12
+            }}
+            />
+                ))
+
+                }
+
+          </div>
+        ))}
+      </section>
+    );
+  }
 }
 
-export default StoryList
+
+// {
+//     this.props.candyTypes
+//     .find(candyType => candyType.id === candy.candyTypeId)
+//     .name
+//   }
+
+export default StoryList;
 // export default class EmployeeList extends Component {
 //     render () {
 //       return (
