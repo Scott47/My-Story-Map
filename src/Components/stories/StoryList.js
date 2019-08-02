@@ -5,11 +5,11 @@ class StoryList extends Component {
   render() {
     return (
       <section className="stories">
-        {this.props.stories.map(story => (
+        {this.props.userStories.map(story => (
           <div key={story.id} className="card card--stories">
             <h5>{story.name}</h5>
             {
-                this.props.basemaps.filter(basemap => basemap.id === story.basemapId).map(basemap => (
+            this.props.basemaps.filter(basemap => basemap.id === story.basemapId).map(basemap => (
             <Scene
               style={{ width: "100vw", height: "100vh" }}
               key={story.basemapId}
@@ -19,10 +19,8 @@ class StoryList extends Component {
                 zoom: 12
             }}
             />
-                ))
-
-                }
-
+            ))
+            }
           </div>
         ))}
       </section>

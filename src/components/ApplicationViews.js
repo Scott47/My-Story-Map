@@ -22,15 +22,13 @@ class ApplicationViews extends Component {
     users: [],
     locations: [],
     basemaps: [],
-    stories: []
+    stories: [],
+    currentUserId: sessionStorage.getItem("userId")
   };
 
   componentDidMount() {
     const newState = {}
-    // const container = this.mapDiv.current;
-    // const basemap = themeToBasemap(this.props.themeToBasemap)
-    // loadMap(container, basemap)
-    // .when(view => { this.view = view })
+    this.setState({ currentUserId: sessionStorage.getItem("userId") })
 
     UserHandler.getAll()
     .then(users => this.setState({ users: users }))
@@ -38,6 +36,7 @@ class ApplicationViews extends Component {
     .then(stories => this.setState({ stories: stories }))
     BaseMapHandler.getAll()
     .then(basemaps => this.setState({ basemaps: basemaps }))
+    console.log(this.state.currentUserId)
   }
 
   addUser = user =>
@@ -56,6 +55,13 @@ class ApplicationViews extends Component {
           stories: stories
         });
       });
+  getUserStories = () =>
+    StoryHandler.getUserStories(this.state.currentUserId)
+      .then(currentUserStories => {
+        this.setState({
+          currentUserStories: currentUserStories
+        })
+      })
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
@@ -71,6 +77,8 @@ class ApplicationViews extends Component {
                 {...props}
                 users={this.state.users}
                 stories={this.state.stories}
+                basemaps={this.state.basemaps}
+                getUserStories={this.state.currentUserStories}
                 />
               )
             } else {
