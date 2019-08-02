@@ -109,8 +109,6 @@ class ApplicationViews extends Component {
         <Route path="/stories/:storyId(\d+)" render={props => {
             return(
               <StoryView basemaps={this.state.basemaps} {...props}/>
-
-
             )
           }}/>
 

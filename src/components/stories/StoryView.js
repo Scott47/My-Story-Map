@@ -19,9 +19,17 @@ export default class StoryView extends Component {
     }
 
     render () {
-        console.log(this.state.story.basemapId)
         return (
             <section>
+                <div className="storyElements">
+                    {
+                        this.state.storyelements.map(storyelement => {
+                            return (
+
+                            <h3 key={ storyelement.id }>{ storyelement.text }</h3>)
+                        })
+                    }
+                </div>
             {
             this.props.basemaps.filter(basemap => basemap.id === this.state.story.basemapId).map(basemap => (
             <Scene style={{ width: "100vw", height: "100vh" }}
@@ -29,13 +37,12 @@ export default class StoryView extends Component {
               mapProperties={{ basemap: basemap.name }}
               viewProperties={{
                 center: [ -86.767960, 36.174465 ],
-                zoom: 11
+                zoom: 12
             }} />
-
-
             ))}
             </section>
         )
     }
 }
+
 

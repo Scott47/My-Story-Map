@@ -18,7 +18,7 @@ getUserStories: {
 },
 getStoryElements: {
     value: function (storyId) {
-        return ApiHandler.getWithQuery("storyelements", `storyId=${storyId}`)
+        return ApiHandler.getWithQuery("storyelements", `storyId=${storyId}&_sort=orderSequence`)
     }
 }
 })
