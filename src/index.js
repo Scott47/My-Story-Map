@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from "react-router-dom"
 import './index.css';
 import Maps from './Maps';
-import { Map } from '@esri/react-arcgis';
 import * as serviceWorker from './serviceWorker';
-import { WebMap, WebScene } from '@esri/react-arcgis';
+
 
 // "esri/basemaps",
 // "esri/map",

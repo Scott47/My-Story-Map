@@ -15,5 +15,10 @@ getUserStories: {
     value: function (userId) {
         return ApiHandler.getWithQuery("stories", `userId=${userId}`)
     }
+},
+getStoryElements: {
+    value: function (storyId) {
+        return ApiHandler.getWithQuery("storyelements", `storyId=${storyId}`)
+    }
 }
 })

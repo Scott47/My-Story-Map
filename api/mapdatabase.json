@@ -40,11 +40,11 @@
     },
     {
         "id": 3,
-      "name": "streetsNightVector"
+      "name": "streets-night-vector"
     },
     {
         "id": 4,
-        "name": "streetsVector"
+        "name": "streets-vector"
     },
     {
         "id": 5,
@@ -65,8 +65,20 @@
     {
       "id": 1,
       "userId": 1,
-      "basemapId": 1,
+      "basemapId": 2,
       "name": "Nashville"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "basemapId": 1,
+      "name": "Birmingham"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "basemapId": 2,
+      "name": "Downtown"
     }
 ],
   "storyelements": [

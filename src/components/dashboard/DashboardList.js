@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Dashboard.css"
-import StoryList from "../stories/StoryList"
 import StoryHandler from "../apiManager/StoryHandler"
+import StoryCard from "../stories/StoryCard"
 
 class Dashboard extends Component {
   state = {
@@ -22,10 +22,11 @@ class Dashboard extends Component {
           <div className="parent-Dash-Div">
             <div className="dashboard-row">
               <div className="dashboard-div-box">
-                <h3>Stories</h3>
+                <h3>Map Stories</h3>
                 <div className="dashboard-div">
-                  <StoryList {...this.props}
-                  userStories={this.state.userStories}/>
+                {this.state.userStories.map(storyObj => (
+                  <StoryCard key={storyObj.id} story={storyObj} />
+                ))}
                 </div>
               </div>
               {/* <div className="dashboard-div-box">
