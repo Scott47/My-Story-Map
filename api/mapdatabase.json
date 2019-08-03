@@ -32,23 +32,23 @@
   "basemaps": [
     {
       "id": 1,
-      "name": "topoVector",
+      "name": "topo-vector"
     },
     {
       "id": 2,
       "name": "satellite"
     },
     {
-        "id": 3,
-      "name": "streetsNightVector"
+      "id": 3,
+      "name": "streets-night-vector"
     },
     {
-        "id": 4,
-        "name": "streetsVector"
+      "id": 4,
+      "name": "streets-vector"
     },
     {
-        "id": 5,
-        "name": "NatGeo"
+      "id": 5,
+      "name": "national-geographic"
     }
   ],
   "locations": [
@@ -57,16 +57,64 @@
       "userId": 1,
       "storyId": 1,
       "name": "Nashville",
-      "latitude": "36.1627000",
-      "longitude": "-086.7816000"
+      "latitude": 36.1627,
+      "longitude": 86.7816
     }
   ],
   "stories": [
     {
       "id": 1,
       "userId": 1,
+      "basemapId": 2,
+      "name": "Nashville",
+      "description": "this is my map"
+    },
+    {
+      "id": 2,
+      "userId": 1,
       "basemapId": 1,
-      "name": "Nashville"
+      "name": "Birmingham",
+      "description": "this is my map"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "basemapId": 2,
+      "name": "Downtown",
+      "description": "this is my map"
+    },
+    {
+      "userId": 1,
+      "basemapId": "1",
+      "name": "Homey",
+      "description": "homey's map",
+      "id": 4
+    }
+  ],
+  "storyelements": [
+    {
+      "id": 1,
+      "storyId": 1,
+      "orderSequence": 3,
+      "userId": 1,
+      "text": "this is the third",
+      "url": ""
+    },
+    {
+      "id": 2,
+      "storyId": 1,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "this is the second",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "storyId": 1,
+      "orderSequence": 1,
+      "userId": 1,
+      "text": "this is the first",
+      "url": ""
     }
   ]
 }

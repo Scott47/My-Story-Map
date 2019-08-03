@@ -6,13 +6,17 @@ import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
 import StoryHandler from "./apiManager/StoryHandler"
 import Satellite from "./basemaps/Satellite"
-import Topo from "./basemaps/Topo"
-import Streets from "./basemaps/StreetVector"
-import StreetNight from "./basemaps/StreetNight"
-import NatGeo from "./basemaps/NatGeo"
-import Hybrid from "./basemaps/Hybrid"
+// import Topo from "./basemaps/Topo"
+// import Streets from "./basemaps/StreetVector"
+// import StreetNight from "./basemaps/StreetNight"
+// import NatGeo from "./basemaps/NatGeo"
+// import Hybrid from "./basemaps/Hybrid"
 import StoryList from "./stories/StoryList"
+import StoryView from "./stories/StoryView"
 import DashboardList from "./dashboard/DashboardList"
+// import Story from './stories/Story';
+import BaseMapHandler from './apiManager/BaseMapHandler';
+import NewStory from './stories/NewStory';
 
 
 class ApplicationViews extends Component {
@@ -20,18 +24,21 @@ class ApplicationViews extends Component {
     users: [],
     locations: [],
     basemaps: [],
-    stories: []
+    stories: [],
+    currentUserId: sessionStorage.getItem("userId")
   };
 
   componentDidMount() {
     const newState = {}
-    // const container = this.mapDiv.current;
-    // const basemap = themeToBasemap(this.props.themeToBasemap)
-    // loadMap(container, basemap)
-    // .when(view => { this.view = view })
+    this.setState({ currentUserId: sessionStorage.getItem("userId") })
 
     UserHandler.getAll()
     .then(users => this.setState({ users: users }))
+    StoryHandler.getAll()
+    .then(stories => this.setState({ stories: stories }))
+    BaseMapHandler.getAll()
+    .then(basemaps => this.setState({ basemaps: basemaps }))
+    console.log(this.state.currentUserId)
   }
 
   addUser = user =>
@@ -42,6 +49,7 @@ class ApplicationViews extends Component {
           users: users
         })
       );
+
   addStory = story =>
     StoryHandler.post(story)
       .then(() => StoryHandler.getAll())
@@ -50,6 +58,15 @@ class ApplicationViews extends Component {
           stories: stories
         });
       });
+
+  getUserStories = () =>
+    StoryHandler.getUserStories(this.state.currentUserId)
+      .then(currentUserStories => {
+        this.setState({
+          currentUserStories: currentUserStories
+        })
+      })
+
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   render () {
@@ -64,6 +81,8 @@ class ApplicationViews extends Component {
                 {...props}
                 users={this.state.users}
                 stories={this.state.stories}
+                basemaps={this.state.basemaps}
+                getUserStories={this.state.currentUserStories}
                 />
               )
             } else {
@@ -88,52 +107,22 @@ class ApplicationViews extends Component {
             );
           }}
         />
-        <Route path="/topo" render={props => {
+        <Route path="/stories/:storyId(\d+)" render={props => {
             return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <Topo users={this.state.users} />
-                  </div>
+              <StoryView basemaps={this.state.basemaps} {...props}/>
             )
           }}/>
-          <Route path="/satellite" render={props => {
+
+          <Route exact path="/stories/new" render={props => {
             return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <Satellite users={this.state.users} />
-                  </div>
+              <NewStory basemaps={this.state.basemaps} {...props} />
             )
+
           }}/>
-          <Route path="/streets" render={props => {
+          <Route exact path="/stories" render={props => {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
-                  <Streets users={this.state.users} />
-                  </div>
-            )
-          }}/>
-          <Route path="/streetnight" render={props => {
-            return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <StreetNight users={this.state.users} />
-                  </div>
-            )
-          }}/>
-          <Route path="/natgeo" render={props => {
-            return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <NatGeo users={this.state.users} />
-                  </div>
-            )
-          }}/>
-          <Route path="/hybrid" render={props => {
-            return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <Hybrid users={this.state.users} />
-                  </div>
-            )
-          }}/>
-          <Route path="/stories" render={props => {
-            return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <StoryList stories={this.state.stories} />
+                  <StoryList stories={this.state.stories} basemaps={this.state.basemaps}/>
                   </div>
             )
           }}/>
@@ -141,6 +130,8 @@ class ApplicationViews extends Component {
       )
   }
 }
-
+ // <div style={{ width: '100vw', height: '100vh' }}>
+              //     <Topo users={this.state.users} />
+              //     </div>
 
 export default withRouter(ApplicationViews)

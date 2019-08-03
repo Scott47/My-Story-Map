@@ -9,7 +9,7 @@ render () {
 
   return  (
     <React.Fragment>
-      <NavBar />
+      {/* <NavBar /> */}
       <ApplicationViews />
     </React.Fragment>
   );

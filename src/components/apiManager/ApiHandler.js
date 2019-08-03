@@ -11,6 +11,11 @@ export default Object.create(null, {
            return fetch(`${remoteURL}/${resource}`).then(data => data.json())
        }
    },
+   getWithQuery: {
+       value: function (resource, query) {
+           return fetch(`${remoteURL}/${resource}?${query}`).then(data => data.json())
+       }
+   },
    post: {
     value: function (resource, newData){
         return fetch (`${remoteURL}/${resource}`,{
