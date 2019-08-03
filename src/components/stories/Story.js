@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./StoryList.css"
+
 
 
 export default class Story extends Component {

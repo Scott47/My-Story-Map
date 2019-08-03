@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import "./StoryCard.css"
+import "./Story.css"
 
 export default class StoryCard extends Component {
   render() {
