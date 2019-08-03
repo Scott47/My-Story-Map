@@ -16,6 +16,7 @@ import StoryView from "./stories/StoryView"
 import DashboardList from "./dashboard/DashboardList"
 // import Story from './stories/Story';
 import BaseMapHandler from './apiManager/BaseMapHandler';
+import NewStory from './stories/NewStory';
 
 
 class ApplicationViews extends Component {
@@ -112,11 +113,9 @@ class ApplicationViews extends Component {
             )
           }}/>
 
-          <Route path="/satellite" render={props => {
+          <Route exact path="/stories/new" render={props => {
             return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <Satellite users={this.state.users} />
-                  </div>
+              <NewStory basemaps={this.state.basemaps} {...props} />
             )
 
           }}/>
