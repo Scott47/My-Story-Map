@@ -80,8 +80,6 @@ export default class NewStory extends Component {
                         center: [ -86.767960, 36.174465 ],
                         zoom: 14
                     }}
-
-
                 />
                 </Col>
                     )
