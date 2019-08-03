@@ -1,32 +1,32 @@
-import React, { Component } from "react";
-import { Scene } from "@esri/react-arcgis";
+// import React, { Component } from "react";
+// import { Scene } from "@esri/react-arcgis";
 
-class StoryList extends Component {
-  render() {
-    return (
-      <section className="stories">
-        {this.props.userStories.map(story => (
-          <div key={story.id} className="card card--stories">
-            <h5>{story.name}</h5>
-            {
-            this.props.basemaps.filter(basemap => basemap.id === story.basemapId).map(basemap => (
-            <Scene
-              style={{ width: "100vw", height: "100vh" }}
-              key={story.basemapId}
-              mapProperties={{ basemap: basemap.name }}
-              viewProperties={{
-                center: [ -86.767960, 36.174465 ],
-                zoom: 12
-            }}
-            />
-            ))
-            }
-          </div>
-        ))}
-      </section>
-    );
-  }
-}
+// class StoryList extends Component {
+//   render() {
+//     return (
+//       <section className="stories">
+//         {this.props.userStories.map(story => (
+//           <div key={story.id} className="card card--stories">
+//             <h5>{story.name}</h5>
+//             {
+//             this.props.basemaps.filter(basemap => basemap.id === story.basemapId).map(basemap => (
+//             <Scene
+//               style={{ width: "100vw", height: "100vh" }}
+//               key={story.basemapId}
+//               mapProperties={{ basemap: basemap.name }}
+//               viewProperties={{
+//                 center: [ -86.767960, 36.174465 ],
+//                 zoom: 12
+//             }}
+//             />
+//             ))
+//             }
+//           </div>
+//         ))}
+//       </section>
+//     );
+//   }
+// }
 
 
 // {
