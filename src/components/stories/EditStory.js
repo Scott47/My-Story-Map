@@ -3,7 +3,6 @@ import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap"
 import StoryHandler from "../apiManager/StoryHandler";
 import { Scene } from '@esri/react-arcgis'
 
-
 export default class EditStory extends Component {
 
   state = {
@@ -18,6 +17,19 @@ export default class EditStory extends Component {
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
+
+  storyElementType (storyelement) {
+      if (storyelement.type === "img")
+      {
+          return (
+              <img src={storyelement.url} height="250" width="250" />
+        )
+      } else {
+          return (
+            <storyelement.type>{storyelement.text}</storyelement.type>
+        )
+    }
+}
 
   componentDidMount () {
       StoryHandler.get(this.props.match.params.storyId)
@@ -60,10 +72,12 @@ export default class EditStory extends Component {
                   value={this.state.subtitle}
                 />
               </div>
-            <FormGroup>
-                <Label for="storytext"></Label>
-                <Input type="textarea" name="text" id="storytext" />
-            </FormGroup>
+              {
+                  this.state.storyelements.map(storyelement => {
+                    return this.storyElementType(storyelement)
+                      }
+                  )
+                  }
             </Col>
             {
             this.props.basemaps.filter(basemap => basemap.id === this.state.basemap).map(basemap => (
