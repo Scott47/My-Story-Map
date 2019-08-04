@@ -37,7 +37,6 @@ export default class NewStory extends Component {
       .then((newStory) => this.props.history.push(`/stories/edit/${newStory.id}`))
       }
 
-
       render() {
         return (
           <React.Fragment>

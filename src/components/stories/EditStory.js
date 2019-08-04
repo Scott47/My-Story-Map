@@ -1,23 +1,42 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+import { Container, Row, Col } from "reactstrap"
+import StoryHandler from "../apiManager/StoryHandler";
 
 
 export default class EditStory extends Component {
 
-    state ={
-        storyTitle: '',
-        subtitle: '',
-        basemap: ''
-      }
+  state = {
+    storyTitle: "",
+    subtitle: "",
+    basemap: "",
+    storyelements: []
+  };
 
-    handleFieldChange = evt => {
-        const stateToChange = {}
-        stateToChange[evt.target.id] = evt.target.value
-        this.setState(stateToChange)
-      }
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
-render () {
+  componentDidMount () {
+      StoryHandler.get(this.props.match.params.storyId)
+      .then(story => {
+          this.setState({
+              storyTitle: story.name,
+              subtitle: story.description,
+              basemap: story.basemapId
+          })
+      })
+  }
+
+
+  render() {
+      return(
     <React.Fragment>
-    <form className="storyForm">
+      <form className="editStoryForm">
+        <Container>
+          <Row>
+            <Col xs="4">
               <div className="form-group">
                 <label htmlFor="storyTitle">Title</label>
                 <input
@@ -26,9 +45,9 @@ render () {
                   onChange={this.handleFieldChange}
                   id="storyTitle"
                   value={this.state.storyTitle}
-                  />
-                  </div>
-                <div className="form-group">
+                />
+              </div>
+              <div className="form-group">
                 <label htmlFor="subTitle">subtitle</label>
                 <input
                   type="text"
@@ -36,12 +55,13 @@ render () {
                   onChange={this.handleFieldChange}
                   id="subtitle"
                   value={this.state.subtitle}
-                  />
-                  </div>
-
-                  </form>
-
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </form>
     </React.Fragment>
-}
-
+      )
+  }
 }

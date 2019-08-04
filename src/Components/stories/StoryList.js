@@ -35,7 +35,7 @@
 //     .name
 //   }
 
-export default StoryList;
+// export default StoryList;
 // export default class EmployeeList extends Component {
 //     render () {
 //       return (
