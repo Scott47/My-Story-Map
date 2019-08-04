@@ -10,8 +10,6 @@ import StoryList from "./stories/StoryList"
 import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
-
-
 import NewStory from './stories/NewStory';
 import "./nav/NavBar.css"
 
@@ -125,7 +123,7 @@ class ApplicationViews extends Component {
           }} />
           <Route path="/story/edit/:storyId(\d+)" render={props => {
             return (
-              <EditStory {...props} />
+              <EditStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
       </React.Fragment>

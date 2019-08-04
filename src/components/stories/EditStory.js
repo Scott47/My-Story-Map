@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap"
 import StoryHandler from "../apiManager/StoryHandler";
+import { Scene } from '@esri/react-arcgis'
 
 
 export default class EditStory extends Component {
@@ -27,6 +28,8 @@ export default class EditStory extends Component {
               basemap: story.basemapId
           })
       })
+      StoryHandler.getStoryElements(this.props.match.params.storyId)
+      .then(storyelements => this.setState({ storyelements: storyelements }))
   }
 
 
@@ -57,7 +60,22 @@ export default class EditStory extends Component {
                   value={this.state.subtitle}
                 />
               </div>
+            <FormGroup>
+                <Label for="storytext"></Label>
+                <Input type="textarea" name="text" id="storytext" />
+            </FormGroup>
             </Col>
+            {
+            this.props.basemaps.filter(basemap => basemap.id === this.state.basemap).map(basemap => (
+            <Col key={this.state.basemap} xs="8">
+            <Scene style={{ width: "100vw", height: "100vh" }}
+              mapProperties={{ basemap: basemap.name }}
+              viewProperties={{
+                center: [ -86.767960, 36.174465 ],
+                zoom: 12
+            }} />
+            </Col>
+            ))}
           </Row>
         </Container>
       </form>
