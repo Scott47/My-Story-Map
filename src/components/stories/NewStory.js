@@ -3,6 +3,7 @@ import { Scene } from "@esri/react-arcgis";
 import { Row, Col, Button } from "reactstrap"
 import StoryHandler from "../apiManager/StoryHandler";
 
+
 export default class NewStory extends Component {
 
     state ={

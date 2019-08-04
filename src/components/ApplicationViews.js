@@ -11,6 +11,7 @@ import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
 import NewStory from './stories/NewStory';
+import NavBar from "./nav/NavBar"
 import "./nav/NavBar.css"
 
 
@@ -72,7 +73,8 @@ class ApplicationViews extends Component {
           path="/"
           render={props => {
             if (this.isAuthenticated()) {
-              return (<DashboardList
+              return (
+              <DashboardList
                 {...props}
                 users={this.state.users}
                 stories={this.state.stories}
