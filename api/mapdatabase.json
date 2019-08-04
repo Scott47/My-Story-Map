@@ -89,6 +89,20 @@
       "name": "Homey",
       "description": "homey's map",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "basemapId": "2",
+      "name": "Homey",
+      "description": "homey's map",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "basemapId": "1",
+      "name": "Homey",
+      "description": "this is my map",
+      "id": 6
     }
   ],
   "storyelements": [
@@ -113,6 +127,15 @@
     {
       "id": 3,
       "storyId": 1,
+      "orderSequence": 1,
+      "userId": 1,
+      "text": "this is the first and last homey",
+      "url": "",
+      "type": "p"
+    },
+    {
+      "id": 4,
+      "storyId": 6,
       "orderSequence": 1,
       "userId": 1,
       "text": "this is the first and last homey",

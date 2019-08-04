@@ -35,7 +35,7 @@ export default class NewStory extends Component {
         }
 
       StoryHandler.postNewStory(story)
-      .then((newStory) => this.props.history.push(`/stories/edit/${newStory.id}`))
+      .then((newStory) => this.props.history.push(`/story/edit/${newStory.id}`))
       }
 
       render() {
