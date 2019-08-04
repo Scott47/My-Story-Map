@@ -34,10 +34,14 @@ export default class EditStory extends Component {
   saveUpdatedElement = () => {
     const stateToUpdate = Object.assign({}, this.state.editElement)
     stateToUpdate.text = this.state.editElementText
-    this.setState({ editElement: stateToUpdate })
-    .then(() =>
-      StoryHandler.put(this.state.editElement)
-      .then(editedElement => console.log(editedElement)))
+    this.setState({ editElement: stateToUpdate },
+      () => {
+        return StoryHandler.putStoryElement(this.state.editElement)
+      .then(() => {
+      StoryHandler.getStoryElements(this.props.match.params.storyId)
+      .then(storyelements => this.setState({ storyelements: storyelements, editElement: {} }))
+      }
+      )})
   }
 
   storyElementType (storyelement) {

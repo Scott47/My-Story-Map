@@ -33,7 +33,7 @@ postNewStory: {
 },
 putStoryElement: {
     value: function (storyelement) {
-        return ApiHandler.put(storyelement)
+        return ApiHandler.put("storyelements", storyelement)
     }
 }
 
