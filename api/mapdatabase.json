@@ -106,7 +106,7 @@
       "storyId": 1,
       "orderSequence": 2,
       "userId": 1,
-      "text": "this is the second",
+      "text": "this is the second element ",
       "url": "",
       "type": "h4"
     },
@@ -115,7 +115,7 @@
       "storyId": 1,
       "orderSequence": 1,
       "userId": 1,
-      "text": "this is the first",
+      "text": "this is the first and last homey",
       "url": "",
       "type": "p"
     }

@@ -9,7 +9,8 @@ export default class EditStory extends Component {
     storyTitle: "",
     subtitle: "",
     basemap: "",
-    storyelements: []
+    storyelements: [],
+    editElement: {}
   };
 
   handleFieldChange = evt => {
@@ -18,16 +19,58 @@ export default class EditStory extends Component {
     this.setState(stateToChange);
   };
 
+  handleDoubleClick = evt => {
+    evt.persist()
+    console.log(evt)
+    StoryHandler.getStoryElementId(evt.target.id)
+    .then(storyelement => {
+      this.setState({
+        editElement: storyelement,
+        editElementText: storyelement.text
+      })
+    })
+  }
+
+  saveUpdatedElement = () => {
+    const stateToUpdate = Object.assign({}, this.state.editElement)
+    stateToUpdate.text = this.state.editElementText
+    this.setState({ editElement: stateToUpdate },
+      () => {
+        return StoryHandler.putStoryElement(this.state.editElement)
+      .then(() => {
+      StoryHandler.getStoryElements(this.props.match.params.storyId)
+      .then(storyelements => this.setState({ storyelements: storyelements, editElement: {} }))
+      }
+      )})
+  }
+
   storyElementType (storyelement) {
       if (storyelement.type === "img")
       {
           return (
-              <img src={storyelement.url} height="250" width="250" />
+              <img key={storyelement.id} src={storyelement.url} height="250" width="250" />
         )
       } else {
+        if (storyelement.id === this.state.editElement.id)
+        {
           return (
-            <storyelement.type>{storyelement.text}</storyelement.type>
+            <textarea key={storyelement.id}
+            id='editElementText'
+            value={this.state.editElementText}
+            onChange={this.handleFieldChange}
+            onBlur={this.saveUpdatedElement}>
+
+            </textarea>
+          )
+        } else {
+          return (
+            <storyelement.type
+            onDoubleClick={this.handleDoubleClick}
+            id={storyelement.id}
+            key={storyelement.id}>
+            {storyelement.text}</storyelement.type>
         )
+      }
     }
 }
 

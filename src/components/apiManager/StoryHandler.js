@@ -21,10 +21,20 @@ getStoryElements: {
         return ApiHandler.getWithQuery("storyelements", `storyId=${storyId}&_sort=orderSequence`)
     }
 },
+getStoryElementId: {
+    value: function (id) {
+        return ApiHandler.get("storyelements", id)
+    }
+},
 postNewStory: {
     value: function (newStory) {
         return ApiHandler.post("stories", newStory)
     }
+},
+putStoryElement: {
+    value: function (storyelement) {
+        return ApiHandler.put("storyelements", storyelement)
     }
+}
 
 })
