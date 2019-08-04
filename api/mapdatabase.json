@@ -98,7 +98,8 @@
       "orderSequence": 3,
       "userId": 1,
       "text": "this is the third",
-      "url": ""
+      "url": "https://www.mailman.columbia.edu/sites/default/files/styles/large_782x512/public/jpg/Graph678X443.jpg?itok=Yls9X8Ft",
+      "type": "img"
     },
     {
       "id": 2,
@@ -106,7 +107,8 @@
       "orderSequence": 2,
       "userId": 1,
       "text": "this is the second",
-      "url": ""
+      "url": "",
+      "type": "h4"
     },
     {
       "id": 3,
@@ -114,7 +116,8 @@
       "orderSequence": 1,
       "userId": 1,
       "text": "this is the first",
-      "url": ""
+      "url": "",
+      "type": "p"
     }
   ]
 }

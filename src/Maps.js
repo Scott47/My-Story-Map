@@ -3,13 +3,14 @@ import ApplicationViews from './components/ApplicationViews';
 import NavBar from "./components/nav/NavBar"
 import "./Map.css"
 
+
 class Map extends Component {
 render () {
 
 
   return  (
     <React.Fragment>
-      {/* <NavBar /> */}
+      <NavBar />
       <ApplicationViews />
     </React.Fragment>
   );

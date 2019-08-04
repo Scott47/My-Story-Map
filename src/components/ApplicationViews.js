@@ -5,18 +5,13 @@ import Login from "./welcome/Login"
 import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
 import StoryHandler from "./apiManager/StoryHandler"
-import Satellite from "./basemaps/Satellite"
-// import Topo from "./basemaps/Topo"
-// import Streets from "./basemaps/StreetVector"
-// import StreetNight from "./basemaps/StreetNight"
-// import NatGeo from "./basemaps/NatGeo"
-// import Hybrid from "./basemaps/Hybrid"
+import BaseMapHandler from './apiManager/BaseMapHandler';
 import StoryList from "./stories/StoryList"
 import StoryView from "./stories/StoryView"
+import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
-// import Story from './stories/Story';
-import BaseMapHandler from './apiManager/BaseMapHandler';
 import NewStory from './stories/NewStory';
+import "./nav/NavBar.css"
 
 
 class ApplicationViews extends Component {
@@ -111,21 +106,26 @@ class ApplicationViews extends Component {
             return(
               <StoryView basemaps={this.state.basemaps} {...props}/>
             )
-          }}/>
+          }} />
 
           <Route exact path="/stories/new" render={props => {
             return(
               <NewStory basemaps={this.state.basemaps} {...props} />
             )
 
-          }}/>
+          }} />
           <Route exact path="/stories" render={props => {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
                   <StoryList stories={this.state.stories} basemaps={this.state.basemaps}/>
                   </div>
             )
-          }}/>
+          }} />
+          <Route path="/story/edit/:storyId(\d+)" render={props => {
+            return (
+              <EditStory basemaps={this.state.basemaps} {...props} />
+            )
+          }} />
       </React.Fragment>
       )
   }
