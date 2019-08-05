@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Scene } from "@esri/react-arcgis";
 import StoryHandler from "../apiManager/StoryHandler";
 import { Container, Row, Col, Button } from "reactstrap";
+import { Link } from "react-router-dom"
 import "./Story.css";
 
 export default class StoryView extends Component {
@@ -33,9 +34,10 @@ export default class StoryView extends Component {
   render() {
     return (
       <Container>
-          <Button color="link"
-          onClick={this.handleFieldChange}
-          id={this.state.story.id}>edit story</Button>
+          <Link to={`/story/edit/${this.state.story.id}`}><Button color="link"
+
+        //   onClick={this.handleFieldChange}
+          id={this.state.story.id}>edit story</Button></Link>
         <Row>
           <Col xs="4">
             <h1 className="storyTitle">
