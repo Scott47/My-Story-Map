@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Scene } from "@esri/react-arcgis";
 import StoryHandler from "../apiManager/StoryHandler";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import "./Story.css";
 
 export default class StoryView extends Component {
@@ -21,9 +21,21 @@ export default class StoryView extends Component {
     });
   }
 
+  handleFieldChange = evt => {
+    evt.persist()
+    console.log(evt)
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
+
+
   render() {
     return (
       <Container>
+          <Button color="link"
+          onClick={this.handleFieldChange}
+          id={this.state.story.id}>edit story</Button>
         <Row>
           <Col xs="4">
             <h1 className="storyTitle">

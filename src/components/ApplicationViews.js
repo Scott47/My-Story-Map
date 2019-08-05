@@ -131,8 +131,6 @@ class ApplicationViews extends Component {
       )
   }
 }
- // <div style={{ width: '100vw', height: '100vh' }}>
-              //     <Topo users={this.state.users} />
-              //     </div>
+
 
 export default withRouter(ApplicationViews)
