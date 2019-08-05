@@ -86,7 +86,6 @@ class ApplicationViews extends Component {
               return <Redirect to="/welcome" />
             }
           }} />
-
        <Route
           exact path="/welcome" render={props => {
             return <Welcome users={this.state.users} {...props} />;
