@@ -20,6 +20,7 @@ export default class StoryView extends Component {
         this.setState({ story: story })})
     }
 
+
     render () {
         return (
             <Container>
@@ -42,7 +43,8 @@ export default class StoryView extends Component {
               viewProperties={{
                 center: [ -86.767960, 36.174465 ],
                 zoom: 12
-            }} />
+            }}
+            />
             </Col>
             ))}
             </Row>
@@ -50,5 +52,7 @@ export default class StoryView extends Component {
         )
     }
 }
+
+
 
 
