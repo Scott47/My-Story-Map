@@ -22,21 +22,10 @@ export default class StoryView extends Component {
     });
   }
 
-  handleFieldChange = evt => {
-    evt.persist()
-    console.log(evt)
-    const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
-    this.setState(stateToChange);
-  };
-
-
   render() {
     return (
       <Container>
           <Link to={`/story/edit/${this.state.story.id}`}><Button color="link"
-
-        //   onClick={this.handleFieldChange}
           id={this.state.story.id}>edit story</Button></Link>
         <Row>
           <Col xs="4">

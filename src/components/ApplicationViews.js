@@ -46,14 +46,6 @@ class ApplicationViews extends Component {
         })
       );
 
-  addStory = story =>
-    StoryHandler.post(story)
-      .then(() => StoryHandler.getAll())
-      .then(stories => {
-        this.setState({
-          stories: stories
-        });
-      });
 
   getUserStories = () =>
     StoryHandler.getUserStories(this.state.currentUserId)
@@ -101,19 +93,16 @@ class ApplicationViews extends Component {
                 addUser={this.addUser} {...props}
               />
             );
-          }}
-        />
+          }} />
         <Route path="/stories/:storyId(\d+)" render={props => {
             return(
               <StoryView basemaps={this.state.basemaps} {...props}/>
             )
           }} />
-
           <Route exact path="/stories/new" render={props => {
             return(
               <NewStory basemaps={this.state.basemaps} {...props} />
             )
-
           }} />
           <Route exact path="/stories" render={props => {
             return(
