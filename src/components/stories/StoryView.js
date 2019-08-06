@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import "./Story.css";
 // import SearchWidget from "../widgets/SearchWidget"
 import BermudaTriangle from '../widgets/BermudaTriangle'
+import SketchWidget from '../widgets/SketchWidget'
 
 export default class StoryView extends Component {
   state = {
@@ -56,6 +57,7 @@ export default class StoryView extends Component {
                   }}
                 >
                 <BermudaTriangle />
+                <SketchWidget />
                 </Scene>
               </Col>
             ))}

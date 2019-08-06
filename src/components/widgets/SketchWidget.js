@@ -3,32 +3,48 @@ import { useState, useEffect } from 'react';
 import { loadModules } from '@esri/react-arcgis';
 
 
+const SketchWidget = (props) => {
 
-export default class SketchWidget extends React.Component {
+    const [sketch, setSketch] = useState(null);
+    useEffect(() => {
+        loadModules(['esri/widgets/Sketch/SketchViewModel']).then(([SketchViewModel]) => {console.log(SketchViewModel)
+        // layer = new GraphicsLayer();
+        let newSketch =  new SketchViewModel ()
+            // layer: GraphicsLaye
+        setSketch(newSketch);
+        props.view.ui.add(sketch, "top-right");
 
-    state = {
-        sketch: new Sketch(),
-        layer: layer,
-        view: view
-    }
+        })
+        .catch((err) => console.error(err))
+        return function cleanup() {
+            props.view.ui.remove(sketch);
+        };
 
-
-    ComponentDidMount() {
-console.log(ArcGIS)
-        this.props.view.when(this.onViewLoaded);
-      }
-
-      onViewLoaded = (view) => {
-        this.state.vm.view = view;
-        watchUtils.init(view, "Sketch", this.onSketchChange);
-      };
-
-    layer = new GraphicsLayer();
-
+     } )
+    return null;
 
 }
 
-view.ui.add(sketch, "top-right");
+
+export default SketchWidget
+
+
+
+    // ComponentDidMount() {
+    //     this.props.view.when(this.onViewLoaded);
+    //   }
+
+    //   onViewLoaded = (view) => {
+    //     this.state.vm.view = view;
+    //     watchUtils.init(view, "Sketch", this.onSketchChange);
+    //   };
+
+
+
+
+
+
+// view.ui.add(sketch, "top-right");
 
 
 // componentDidMount() {
