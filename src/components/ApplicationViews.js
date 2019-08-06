@@ -11,7 +11,9 @@ import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
 import NewStory from './stories/NewStory';
+import NavBar from "./nav/NavBar"
 import "./nav/NavBar.css"
+import { Point } from "esri-loader"
 
 
 class ApplicationViews extends Component {
@@ -24,6 +26,7 @@ class ApplicationViews extends Component {
   };
 
   componentDidMount() {
+    console.log(Point)
     const newState = {}
     this.setState({ currentUserId: sessionStorage.getItem("userId") })
 
@@ -45,14 +48,6 @@ class ApplicationViews extends Component {
         })
       );
 
-  addStory = story =>
-    StoryHandler.post(story)
-      .then(() => StoryHandler.getAll())
-      .then(stories => {
-        this.setState({
-          stories: stories
-        });
-      });
 
   getUserStories = () =>
     StoryHandler.getUserStories(this.state.currentUserId)
@@ -72,7 +67,8 @@ class ApplicationViews extends Component {
           path="/"
           render={props => {
             if (this.isAuthenticated()) {
-              return (<DashboardList
+              return (
+              <DashboardList
                 {...props}
                 users={this.state.users}
                 stories={this.state.stories}
@@ -84,7 +80,6 @@ class ApplicationViews extends Component {
               return <Redirect to="/welcome" />
             }
           }} />
-
        <Route
           exact path="/welcome" render={props => {
             return <Welcome users={this.state.users} {...props} />;
@@ -100,19 +95,16 @@ class ApplicationViews extends Component {
                 addUser={this.addUser} {...props}
               />
             );
-          }}
-        />
+          }} />
         <Route path="/stories/:storyId(\d+)" render={props => {
             return(
               <StoryView basemaps={this.state.basemaps} {...props}/>
             )
           }} />
-
           <Route exact path="/stories/new" render={props => {
             return(
               <NewStory basemaps={this.state.basemaps} {...props} />
             )
-
           }} />
           <Route exact path="/stories" render={props => {
             return(
@@ -130,8 +122,6 @@ class ApplicationViews extends Component {
       )
   }
 }
- // <div style={{ width: '100vw', height: '100vh' }}>
-              //     <Topo users={this.state.users} />
-              //     </div>
+
 
 export default withRouter(ApplicationViews)

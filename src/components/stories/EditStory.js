@@ -77,6 +77,7 @@ export default class EditStory extends Component {
   componentDidMount () {
       StoryHandler.get(this.props.match.params.storyId)
       .then(story => {
+        console.log(story)
           this.setState({
               storyTitle: story.name,
               subtitle: story.description,
@@ -123,7 +124,7 @@ export default class EditStory extends Component {
                   }
             </Col>
             {
-            this.props.basemaps.filter(basemap => basemap.id === this.state.basemap).map(basemap => (
+            this.props.basemaps.filter(basemap => basemap.id == this.state.basemap).map(basemap => (
             <Col key={this.state.basemap} xs="8">
             <Scene style={{ width: "100vw", height: "100vh" }}
               mapProperties={{ basemap: basemap.name }}

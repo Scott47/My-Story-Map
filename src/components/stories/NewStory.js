@@ -3,6 +3,7 @@ import { Scene } from "@esri/react-arcgis";
 import { Row, Col, Button } from "reactstrap"
 import StoryHandler from "../apiManager/StoryHandler";
 
+
 export default class NewStory extends Component {
 
     state ={
@@ -34,7 +35,7 @@ export default class NewStory extends Component {
         }
 
       StoryHandler.postNewStory(story)
-      .then((newStory) => this.props.history.push(`/stories/edit/${newStory.id}`))
+      .then((newStory) => this.props.history.push(`/story/edit/${newStory.id}`))
       }
 
       render() {
