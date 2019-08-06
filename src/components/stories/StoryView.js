@@ -4,6 +4,8 @@ import StoryHandler from "../apiManager/StoryHandler";
 import { Container, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom"
 import "./Story.css";
+// import SearchWidget from "../widgets/SearchWidget"
+import BermudaTriangle from '../widgets/BermudaTriangle'
 
 export default class StoryView extends Component {
   state = {
@@ -52,7 +54,9 @@ export default class StoryView extends Component {
                     center: [-86.76796, 36.174465],
                     zoom: 12
                   }}
-                />
+                >
+                <BermudaTriangle />
+                </Scene>
               </Col>
             ))}
         </Row>

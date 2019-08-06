@@ -1,9 +1,10 @@
 import React from "react"
-import { loadModules } from 'esri-loader'
-import ArcGIS from "arcgis-js-api"
+import { useState, useEffect } from 'react';
+import { loadModules } from '@esri/react-arcgis';
 
 
-export default class Sketch extends React.Component {
+
+export default class SketchWidget extends React.Component {
 
     state = {
         sketch: new Sketch(),
