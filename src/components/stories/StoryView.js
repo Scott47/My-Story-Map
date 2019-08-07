@@ -49,7 +49,7 @@ export default class StoryView extends Component {
             .map(basemap => (
               <Col key={this.state.story.id} xs="8">
                 <Scene
-                  style={{ width: "100vw", height: "100vh" }}
+                  style={{ width: "50vw", height: "50vh" }}
                   mapProperties={{ basemap: basemap.name }}
                   viewProperties={{
                     center: [-86.76796, 36.174465],

@@ -13,7 +13,6 @@ import DashboardList from "./dashboard/DashboardList"
 import NewStory from './stories/NewStory';
 import NavBar from "./nav/NavBar"
 import "./nav/NavBar.css"
-import { Point } from "esri-loader"
 
 
 class ApplicationViews extends Component {
@@ -26,7 +25,6 @@ class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-    console.log(Point)
     const newState = {}
     this.setState({ currentUserId: sessionStorage.getItem("userId") })
 
