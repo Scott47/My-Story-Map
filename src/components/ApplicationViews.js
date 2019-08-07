@@ -55,6 +55,13 @@ class ApplicationViews extends Component {
         })
       })
 
+  deleteStory = id => StoryHandler.deleteStory(id)
+    .then(StoryHandler.getAll())
+    .then(stories => {
+        this.props.history.push("/")
+        this.setState({ stories: stories })
+    })
+
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   render () {
@@ -72,6 +79,7 @@ class ApplicationViews extends Component {
                 stories={this.state.stories}
                 basemaps={this.state.basemaps}
                 getUserStories={this.state.currentUserStories}
+                deleteStory={this.deleteStory}
                 />
               )
             } else {

@@ -35,6 +35,11 @@ putStoryElement: {
     value: function (storyelement) {
         return ApiHandler.put("storyelements", storyelement)
     }
-}
+},
+deleteStory: {
+    value: function(id){
+        return ApiHandler.delete("stories", id)
+    }
+},
 
 })

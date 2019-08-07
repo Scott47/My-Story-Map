@@ -14,6 +14,7 @@ export default class EditStory extends Component {
   };
 
   handleFieldChange = evt => {
+    console.log(evt.target.id)
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
@@ -44,6 +45,16 @@ export default class EditStory extends Component {
       )})
   }
 
+  addStoryElements = evt => {
+    evt.preventDefault();
+    const storyelement = {
+      userId: +sessionStorage.getItem("userId"),
+      text: "",
+      img: "",
+      type: ""
+    };
+  };
+
   storyElementType (storyelement) {
       if (storyelement.type === "img")
       {
@@ -59,7 +70,6 @@ export default class EditStory extends Component {
             value={this.state.editElementText}
             onChange={this.handleFieldChange}
             onBlur={this.saveUpdatedElement}>
-
             </textarea>
           )
         } else {
@@ -122,6 +132,10 @@ export default class EditStory extends Component {
                       }
                   )
                   }
+                  <button id="addElement"
+                  onClick={this.state.addStoryElements}
+                  >+</button>
+
             </Col>
             {
             this.props.basemaps.filter(basemap => basemap.id == this.state.basemap).map(basemap => (

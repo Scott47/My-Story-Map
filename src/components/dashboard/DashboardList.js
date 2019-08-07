@@ -27,8 +27,12 @@ class Dashboard extends Component {
                 <h3>My Story Maps</h3>
                 <div className="dashboard-div">
                 {this.state.userStories.map(storyObj => (
-                  <StoryCard key={storyObj.id} story={storyObj} />
-                ))}
+                  <StoryCard key={storyObj.id} story={storyObj} deleteStory={this.props.deleteStory}/>
+                ))}<a href="#"
+                onClick={() => {
+                    this.props.deleteStory(this.props.story.id);
+                  }}
+                className="card-link">Delete</a>
                 </div>
               </div>
               {/* <div className="dashboard-div-box">
