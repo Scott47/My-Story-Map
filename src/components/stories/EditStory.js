@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap"
 import StoryHandler from "../apiManager/StoryHandler";
 import { Scene } from '@esri/react-arcgis'
+import NewStoryElement from "./NewStoryElement"
 
 export default class EditStory extends Component {
 
@@ -10,7 +11,8 @@ export default class EditStory extends Component {
     subtitle: "",
     basemap: "",
     storyelements: [],
-    editElement: {}
+    editElement: {},
+    addStoryElement: false
   };
 
   handleFieldChange = evt => {
@@ -34,15 +36,16 @@ export default class EditStory extends Component {
 
   addStoryElements = evt => {
     evt.preventDefault();
-    const storyelement = {
-      userId: +sessionStorage.getItem("userId"),
-      text: "",
-      img: "",
-      type: ""
+    this.setState({addStoryElement: true})
     };
-    StoryHandler.postStoryElementId(storyelement)
-    .then((elementId) => this.props.history.push(`/story/edit/${elementId.id}`))
-  };
+  saveStoryElement = (element) => {
+    StoryHandler.postStoryElementId(element)
+    .then(() => StoryHandler.getStoryElements(this.props.match.params.storyId)
+    .then(storyelements => this.setState({ storyelements: storyelements }))
+    )}
+
+
+
 
   saveUpdatedElement = () => {
     const stateToUpdate = Object.assign({}, this.state.editElement)
@@ -136,6 +139,7 @@ export default class EditStory extends Component {
                       }
                   )
                   }
+                  {this.state.addStoryElement ? <NewStoryElement storyId={this.props.match.params.storyId} />: null}
                   <button id="addElement"
                   onClick={this.addStoryElements}
                   >+</button>

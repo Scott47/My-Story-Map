@@ -75,6 +75,13 @@
       "name": "Nightmare",
       "description": "elmstreet",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "basemapId": "1",
+      "name": "",
+      "description": "elmstreet",
+      "id": 3
     }
   ],
   "storyelements": [
@@ -104,13 +111,6 @@
       "text": "this is the first and last ",
       "url": "",
       "type": "p"
-    },
-    {
-      "userId": 1,
-      "text": "",
-      "img": "",
-      "type": "",
-      "id": 4
     }
   ]
 }

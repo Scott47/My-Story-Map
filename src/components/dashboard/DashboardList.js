@@ -10,10 +10,9 @@ class Dashboard extends Component {
   }
 
   deleteStory = id => StoryHandler.deleteStory(id)
-    .then(StoryHandler.getAll()
+    .then(() => StoryHandler.getAll()
     .then(stories => {
-        this.props.history.push("/")
-        this.setState({ stories: stories })
+        this.setState({ userStories: stories })
     }))
 
   componentDidMount() {
