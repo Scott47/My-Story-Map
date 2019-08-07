@@ -70,18 +70,11 @@
       "description": "this is my map"
     },
     {
-      "id": 2,
       "userId": 1,
-      "basemapId": 1,
-      "name": "Birmingham",
-      "description": "this is my map"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "basemapId": 2,
-      "name": "Downtown",
-      "description": "this is my map"
+      "basemapId": "1",
+      "name": "Nightmare",
+      "description": "elmstreet",
+      "id": 2
     }
   ],
   "storyelements": [
@@ -111,6 +104,13 @@
       "text": "this is the first and last ",
       "url": "",
       "type": "p"
+    },
+    {
+      "userId": 1,
+      "text": "",
+      "img": "",
+      "type": "",
+      "id": 4
     }
   ]
 }

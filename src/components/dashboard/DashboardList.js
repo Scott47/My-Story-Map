@@ -9,6 +9,13 @@ class Dashboard extends Component {
     userStories: []
   }
 
+  deleteStory = id => StoryHandler.deleteStory(id)
+    .then(StoryHandler.getAll()
+    .then(stories => {
+        this.props.history.push("/")
+        this.setState({ stories: stories })
+    }))
+
   componentDidMount() {
     const newState = {}
     StoryHandler.getUserStories(sessionStorage.getItem("userId"))
@@ -27,12 +34,8 @@ class Dashboard extends Component {
                 <h3>My Story Maps</h3>
                 <div className="dashboard-div">
                 {this.state.userStories.map(storyObj => (
-                  <StoryCard key={storyObj.id} story={storyObj} deleteStory={this.props.deleteStory}/>
-                ))}<a href="#"
-                onClick={() => {
-                    this.props.deleteStory(this.props.story.id);
-                  }}
-                className="card-link">Delete</a>
+                  <StoryCard key={storyObj.id} story={storyObj} deleteStory={this.deleteStory}/>
+                ))}
                 </div>
               </div>
               {/* <div className="dashboard-div-box">

@@ -32,6 +32,18 @@ export default class EditStory extends Component {
     })
   }
 
+  addStoryElements = evt => {
+    evt.preventDefault();
+    const storyelement = {
+      userId: +sessionStorage.getItem("userId"),
+      text: "",
+      img: "",
+      type: ""
+    };
+    StoryHandler.postStoryElementId(storyelement)
+    .then((elementId) => this.props.history.push(`/story/edit/${elementId.id}`))
+  };
+
   saveUpdatedElement = () => {
     const stateToUpdate = Object.assign({}, this.state.editElement)
     stateToUpdate.text = this.state.editElementText
@@ -45,15 +57,7 @@ export default class EditStory extends Component {
       )})
   }
 
-  addStoryElements = evt => {
-    evt.preventDefault();
-    const storyelement = {
-      userId: +sessionStorage.getItem("userId"),
-      text: "",
-      img: "",
-      type: ""
-    };
-  };
+
 
   storyElementType (storyelement) {
       if (storyelement.type === "img")
@@ -133,7 +137,7 @@ export default class EditStory extends Component {
                   )
                   }
                   <button id="addElement"
-                  onClick={this.state.addStoryElements}
+                  onClick={this.addStoryElements}
                   >+</button>
 
             </Col>
