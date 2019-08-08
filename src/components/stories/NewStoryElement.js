@@ -22,18 +22,20 @@ export default class NewStoryElement extends Component {
     }));
   }
 
-  keyPress(e){
+
+
+  keyPress = (e) => {
     if(e.keyCode == 13){
        console.log('value', e.target.value);
        let newElement = {
         storyId: +this.props.storyId,
-        orderSequence: 1,
+        orderSequence: this.props.getMaxOrderSequence(),
         userId: +sessionStorage.getItem("userId"),
         text: this.state.text,
         url: "",
         type: this.state.type
        }
-    this.props.saveStoryElement()}
+    this.props.saveStoryElement(newElement)}
       }
 
   render() {
@@ -58,11 +60,10 @@ export default class NewStoryElement extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="text"
-              placeholder="element">
+              placeholder="element"
+              onKeyUp={this.keyPress}>
               </textarea>
           </div>
-          <button id="saveElement"
-          onClick={this.props.saveStoryElement}>save</button>
         </section>
       </React.Fragment>
     );
