@@ -14,6 +14,8 @@ import NewStory from './stories/NewStory';
 import NavBar from "./nav/NavBar"
 import "./nav/NavBar.css"
 
+import Zoom from "./widgets/Zoom"
+
 
 class ApplicationViews extends Component {
   state = {
@@ -118,6 +120,11 @@ class ApplicationViews extends Component {
               <EditStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
+          {/* <Route exact path="/test" render={props => {
+            return (
+              <Zoom {...props} />
+            )
+          }} /> */}
       </React.Fragment>
       )
   }

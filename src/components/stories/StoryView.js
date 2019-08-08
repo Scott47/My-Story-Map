@@ -8,6 +8,7 @@ import "./Story.css";
 import BermudaTriangle from '../widgets/BermudaTriangle'
 import SketchWidget from '../widgets/SketchWidget'
 
+
 export default class StoryView extends Component {
   state = {
     storyelements: [],
@@ -48,17 +49,21 @@ export default class StoryView extends Component {
             .filter(basemap => basemap.id === this.state.story.basemapId)
             .map(basemap => (
               <Col key={this.state.story.id} xs="8">
+
                 <Scene
+
                   style={{ width: "50vw", height: "50vh" }}
                   mapProperties={{ basemap: basemap.name }}
                   viewProperties={{
                     center: [-86.76796, 36.174465],
-                    zoom: 12
+                    zoom: 11,
                   }}
                 >
                 <BermudaTriangle />
                 <SketchWidget />
                 </Scene>
+
+
               </Col>
             ))}
         </Row>

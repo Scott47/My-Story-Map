@@ -78,8 +78,8 @@
     },
     {
       "userId": 1,
-      "basemapId": "1",
-      "name": "",
+      "basemapId": "5",
+      "name": "Nightmare",
       "description": "elmstreet",
       "id": 3
     }
@@ -99,7 +99,7 @@
       "storyId": 1,
       "orderSequence": 2,
       "userId": 1,
-      "text": "this is the second element ",
+      "text": "this is the second and I can't add a type. Why?",
       "url": "",
       "type": "h4"
     },
@@ -108,7 +108,7 @@
       "storyId": 1,
       "orderSequence": 1,
       "userId": 1,
-      "text": "this is the first and last ",
+      "text": "this is the first and last  \n",
       "url": "",
       "type": "p"
     },
@@ -138,6 +138,15 @@
       "url": "",
       "type": "h1",
       "id": 6
+    },
+    {
+      "storyId": 3,
+      "orderSequence": null,
+      "userId": 1,
+      "text": "This is a National Geographic Map\n",
+      "url": "",
+      "type": "h1",
+      "id": 7
     }
   ]
 }
