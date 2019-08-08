@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Scene } from "@esri/react-arcgis";
+import { Scene, Sketch } from "@esri/react-arcgis";
 import StoryHandler from "../apiManager/StoryHandler";
 import { Container, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom"
