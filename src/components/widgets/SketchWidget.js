@@ -12,9 +12,12 @@ const SketchWidget = (props) => {
       "esri/widgets/Sketch",
       "esri/layers/GraphicsLayer",
       "esri/views/MapView",
-      "esri/Map"
+      "esri/Map",
+      "esri/widgets/Locate",
+      "esri/Graphic"
+
     ])
-      .then(([Sketch, GraphicsLayer, MapView, Map ]) => {
+      .then(([Sketch, GraphicsLayer, MapView, Map, Locate, Graphic ]) => {
         // console.log(Sketch);
         // let map = new MapView
         let layer = new GraphicsLayer();
@@ -40,6 +43,16 @@ const SketchWidget = (props) => {
         });
         view.ui.add(sketch, "top-right")
 
+        var locateWidget = new Locate({
+          view: view,   // Attaches the Locate button to the view
+          graphic: new Graphic({
+            symbol: { type: "simple-marker" }  // overwrites the default symbol used for the
+            // graphic placed at the location of the user when found
+          })
+        });
+        view.ui.add(locateWidget, "top-left");
+
+
         console.log(node)
       })
   }, []);
@@ -49,6 +62,9 @@ const SketchWidget = (props) => {
 };
 
 export default SketchWidget;
+
+
+
 
 
 
