@@ -29,7 +29,7 @@ export default class NewStoryElement extends Component {
        console.log('value', e.target.value);
        let newElement = {
         storyId: +this.props.storyId,
-        orderSequence: this.props.getMaxOrderSequence(),
+        orderSequence: this.props.getMaxOrderSequence() + 1,
         userId: +sessionStorage.getItem("userId"),
         text: this.state.text,
         url: "",

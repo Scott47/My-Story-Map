@@ -32,23 +32,28 @@
   "basemaps": [
     {
       "id": 1,
-      "name": "topo-vector"
+      "name": "topo-vector",
+      "path": "/images/basemap/topo.jpg"
     },
     {
       "id": 2,
-      "name": "satellite"
+      "name": "satellite",
+      "path": "/images/basemap/satellite.jpg"
     },
     {
       "id": 3,
-      "name": "streets-night-vector"
+      "name": "streets-night-vector",
+      "path": "/images/basemap/streets-night.jpg"
     },
     {
       "id": 4,
-      "name": "streets-vector"
+      "name": "streets-vector",
+      "path": "/images/basemap/streets.jpg"
     },
     {
       "id": 5,
-      "name": "national-geographic"
+      "name": "national-geographic",
+      "path": "/images/basemap/national-geographic.jpg"
     }
   ],
   "locations": [
@@ -96,6 +101,34 @@
       "name": "Homey",
       "description": "homey's map",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "basemapId": "4",
+      "name": "Dig",
+      "description": "Deep",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "basemapId": "3",
+      "name": "Homey",
+      "description": "this is my map",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "basemapId": "1",
+      "name": "Jissie Stick",
+      "description": "prank",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "basemapId": "5",
+      "name": "orderly fashions",
+      "description": "elmstreet",
+      "id": 9
     }
   ],
   "storyelements": [
@@ -188,6 +221,78 @@
       "url": "",
       "type": "p",
       "id": 10
+    },
+    {
+      "storyId": 8,
+      "orderSequence": null,
+      "userId": 1,
+      "text": "Jissie's Map\n",
+      "url": "",
+      "type": "h1",
+      "id": 11
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "hi jissie\n",
+      "url": "",
+      "type": "p",
+      "id": 12
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "sup\n",
+      "url": "",
+      "type": "h1",
+      "id": 13
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "cool\n",
+      "url": "",
+      "type": "p",
+      "id": 14
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "photos all over town\n",
+      "url": "",
+      "type": "p",
+      "id": 15
+    },
+    {
+      "storyId": 9,
+      "orderSequence": null,
+      "userId": 1,
+      "text": "things must proceed in order\n",
+      "url": "",
+      "type": "h1",
+      "id": 16
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 1,
+      "userId": 1,
+      "text": "wtf is next\n",
+      "url": "",
+      "type": "p",
+      "id": 17
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "dmMIT\n",
+      "url": "",
+      "type": "",
+      "id": 18
     }
   ]
 }

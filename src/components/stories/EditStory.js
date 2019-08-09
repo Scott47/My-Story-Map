@@ -59,10 +59,17 @@ export default class EditStory extends Component {
   };
 
   orderElements = () => {
+    console.log("storyelements", this.state.storyelements)
     return this.state.storyelements.map(e => e.orderSequence);
   };
   getMaxOrderSequence = () => {
-    return Math.max(...this.orderElements());
+    let biggestNum = Math.max(...this.orderElements());
+    console.log(biggestNum);
+    if (biggestNum == null || biggestNum==0){
+      return 1;
+    }else {
+      return biggestNum;
+    }
   };
 
   storyElementType(storyelement) {
@@ -157,17 +164,17 @@ export default class EditStory extends Component {
               </Col>
               {this.props.basemaps
                 .filter(basemap => basemap.id == this.state.basemap)
-                .map(basemap => (
+                .map(basemapx => (
                   <Col key={this.state.basemap} xs="8">
-                    <Scene
+                    {/* <Scene
                       style={{ width: "70vw", height: "90vh" }}
                       mapProperties={{ basemap: basemap.name }}
                       viewProperties={{
                         center: [-86.76796, 36.174465],
                         zoom: 12
-                      }}>
-                      <SketchWidget />
-                      </Scene>
+                      }}> */}
+                      <SketchWidget basemap={basemapx.name}/>
+                      {/* </Scene> */}
 
                   </Col>
                 ))}

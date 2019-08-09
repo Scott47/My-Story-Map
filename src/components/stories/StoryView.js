@@ -46,22 +46,10 @@ export default class StoryView extends Component {
             </div>
           </Col>
           {this.props.basemaps
-            .filter(basemap => basemap.id === this.state.story.basemapId)
-            .map(basemap => (
+            .filter(basemap => basemap.id === +this.state.story.basemapId)
+            .map(basemapx => (
               <Col key={this.state.story.id} xs="8">
-
-                <Scene
-
-                  style={{ width: "65vw", height: "80vh" }}
-                  mapProperties={{ basemap: basemap.name }}
-                  viewProperties={{
-                    center: [-86.76796, 36.174465],
-                    zoom: 13,
-                  }}
-                >
-                <BermudaTriangle />
-                <SketchWidget />
-                </Scene>
+                <SketchWidget basemap={basemapx.name}/>
               </Col>
             ))}
         </Row>
