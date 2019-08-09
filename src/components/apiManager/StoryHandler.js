@@ -26,6 +26,11 @@ getStoryElementId: {
         return ApiHandler.get("storyelements", id)
     }
 },
+postStoryElementId: {
+    value: function (newElement) {
+        return ApiHandler.post("storyelements", newElement)
+    }
+},
 postNewStory: {
     value: function (newStory) {
         return ApiHandler.post("stories", newStory)
@@ -35,6 +40,11 @@ putStoryElement: {
     value: function (storyelement) {
         return ApiHandler.put("storyelements", storyelement)
     }
-}
+},
+deleteStory: {
+    value: function(id){
+        return ApiHandler.delete("stories", id)
+    }
+},
 
 })

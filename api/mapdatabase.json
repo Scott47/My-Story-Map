@@ -32,23 +32,28 @@
   "basemaps": [
     {
       "id": 1,
-      "name": "topo-vector"
+      "name": "topo-vector",
+      "path": "/images/basemap/topo.jpg"
     },
     {
       "id": 2,
-      "name": "satellite"
+      "name": "satellite",
+      "path": "/images/basemap/satellite.jpg"
     },
     {
       "id": 3,
-      "name": "streets-night-vector"
+      "name": "streets-night-vector",
+      "path": "/images/basemap/streets-night.jpg"
     },
     {
       "id": 4,
-      "name": "streets-vector"
+      "name": "streets-vector",
+      "path": "/images/basemap/streets.jpg"
     },
     {
       "id": 5,
-      "name": "national-geographic"
+      "name": "national-geographic",
+      "path": "/images/basemap/national-geographic.jpg"
     }
   ],
   "locations": [
@@ -70,39 +75,74 @@
       "description": "this is my map"
     },
     {
-      "id": 2,
-      "userId": 1,
-      "basemapId": 1,
-      "name": "Birmingham",
-      "description": "this is my map"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "basemapId": 2,
-      "name": "Downtown",
-      "description": "this is my map"
-    },
-    {
       "userId": 1,
       "basemapId": "1",
-      "name": "Homey",
-      "description": "homey's map",
+      "name": "Nightmare",
+      "description": "elmstreet",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "basemapId": "5",
+      "name": "Nightmare",
+      "description": "elmstreet",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "basemapId": "3",
+      "name": "Nashville Night",
+      "description": "Another sick map",
       "id": 4
     },
     {
       "userId": 1,
-      "basemapId": "2",
+      "basemapId": "5",
       "name": "Homey",
       "description": "homey's map",
       "id": 5
     },
     {
       "userId": 1,
-      "basemapId": "1",
+      "basemapId": "4",
+      "name": "Dig",
+      "description": "Deep",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "basemapId": "3",
       "name": "Homey",
       "description": "this is my map",
-      "id": 6
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "basemapId": "1",
+      "name": "Jissie Stick",
+      "description": "prank",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "basemapId": "5",
+      "name": "orderly fashions",
+      "description": "elmstreet",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "basemapId": "2",
+      "name": "your face",
+      "description": "on a map",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "basemapId": "2",
+      "name": "now this",
+      "description": "better than ever",
+      "id": 11
     }
   ],
   "storyelements": [
@@ -120,7 +160,7 @@
       "storyId": 1,
       "orderSequence": 2,
       "userId": 1,
-      "text": "this is the second element ",
+      "text": "this is the second and I can't add a type. Why?",
       "url": "",
       "type": "h4"
     },
@@ -129,18 +169,198 @@
       "storyId": 1,
       "orderSequence": 1,
       "userId": 1,
-      "text": "this is the first and last homey",
+      "text": "this is the first and last  \n",
       "url": "",
       "type": "p"
     },
     {
-      "id": 4,
-      "storyId": 6,
+      "storyId": 2,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "jlkjhlkjhlkjhlkjhlkj\n",
+      "url": "",
+      "type": "p",
+      "id": 4
+    },
+    {
+      "storyId": 2,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "a;lkdsjf;laksdjf;laksdjf\n",
+      "url": "",
+      "type": "h1",
+      "id": 5
+    },
+    {
+      "storyId": 2,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "saldkf;alskdjf lakjdfl;akjsd ;ladkjf;alkdjf \n",
+      "url": "",
+      "type": "h1",
+      "id": 6
+    },
+    {
+      "storyId": 3,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "This is a National Geographic Map\n",
+      "url": "",
+      "type": "h1",
+      "id": 7
+    },
+    {
+      "storyId": 4,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "Night Time\n",
+      "url": "",
+      "type": "h1",
+      "id": 8
+    },
+    {
+      "storyId": 4,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "This is what it looks like from the sky at night.\n",
+      "url": "",
+      "type": "p",
+      "id": 9
+    },
+    {
+      "storyId": 4,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "adfadfadsf\n",
+      "url": "",
+      "type": "p",
+      "id": 10
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "Jissie's Map\n",
+      "url": "",
+      "type": "h1",
+      "id": 11
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "hi jissie\n",
+      "url": "",
+      "type": "p",
+      "id": 12
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "sup\n",
+      "url": "",
+      "type": "h1",
+      "id": 13
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "cool\n",
+      "url": "",
+      "type": "p",
+      "id": 14
+    },
+    {
+      "storyId": 8,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "photos all over town\n",
+      "url": "",
+      "type": "p",
+      "id": 15
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "things must proceed in order\n",
+      "url": "",
+      "type": "h1",
+      "id": 16
+    },
+    {
+      "storyId": 9,
       "orderSequence": 1,
       "userId": 1,
-      "text": "this is the first and last homey",
+      "text": "wtf is next\n",
       "url": "",
-      "type": "p"
+      "type": "p",
+      "id": 17
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "dmMIT\n",
+      "url": "",
+      "type": "p",
+      "id": 18
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 3,
+      "userId": 1,
+      "text": "pppp\n",
+      "url": "",
+      "type": "p",
+      "id": 19
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 4,
+      "userId": 1,
+      "text": "lower heading\n",
+      "url": "",
+      "type": "h1",
+      "id": 20
+    },
+    {
+      "storyId": 10,
+      "orderSequence": null,
+      "userId": 1,
+      "text": "this\n",
+      "url": "",
+      "type": "h1",
+      "id": 21
+    },
+    {
+      "storyId": 10,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "the other\n",
+      "url": "",
+      "type": "p",
+      "id": 22
+    },
+    {
+      "storyId": 11,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "stay on top\n",
+      "url": "",
+      "type": "h1",
+      "id": 23
+    },
+    {
+      "storyId": 11,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "please\n",
+      "url": "",
+      "type": "p",
+      "id": 24
     }
   ]
 }

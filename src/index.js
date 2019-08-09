@@ -5,6 +5,7 @@ import Maps from './Maps';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import * as DojoConfig from "./DojoConfig"
 
 
 

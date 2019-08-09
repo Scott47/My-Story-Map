@@ -1,8 +1,12 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "./Story.css"
+import StoryHandler from "../apiManager/StoryHandler"
+
+
 
 export default class StoryCard extends Component {
+
   render() {
     return (
         <div key={this.props.story.id} className="card">
@@ -22,7 +26,13 @@ export default class StoryCard extends Component {
         </div>
         </div>
         </Link>
+        <a href="#"
+                    onClick={() => {
+                        this.props.deleteStory(this.props.story.id);
+                      }}
+                    className="card-link">Delete</a>
         </div>
         )
     }
 }
+

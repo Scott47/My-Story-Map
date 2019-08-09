@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Scene } from "@esri/react-arcgis";
+import { Scene, Sketch } from "@esri/react-arcgis";
 import StoryHandler from "../apiManager/StoryHandler";
 import { Container, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom"
 import "./Story.css";
+// import SearchWidget from "../widgets/SearchWidget"
+import BermudaTriangle from '../widgets/BermudaTriangle'
+import SketchWidget from '../widgets/SketchWidget'
+
 
 export default class StoryView extends Component {
   state = {
@@ -42,17 +46,10 @@ export default class StoryView extends Component {
             </div>
           </Col>
           {this.props.basemaps
-            .filter(basemap => basemap.id === this.state.story.basemapId)
-            .map(basemap => (
+            .filter(basemap => basemap.id === +this.state.story.basemapId)
+            .map(basemapx => (
               <Col key={this.state.story.id} xs="8">
-                <Scene
-                  style={{ width: "100vw", height: "100vh" }}
-                  mapProperties={{ basemap: basemap.name }}
-                  viewProperties={{
-                    center: [-86.76796, 36.174465],
-                    zoom: 12
-                  }}
-                />
+                <SketchWidget basemap={basemapx.name}/>
               </Col>
             ))}
         </Row>

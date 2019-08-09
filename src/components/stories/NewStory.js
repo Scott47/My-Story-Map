@@ -38,6 +38,8 @@ export default class NewStory extends Component {
       .then((newStory) => this.props.history.push(`/story/edit/${newStory.id}`))
       }
 
+
+
       render() {
         return (
           <React.Fragment>
@@ -72,15 +74,9 @@ export default class NewStory extends Component {
                     return (<Col key={basemap.id}
                         id={basemap.id}
                         onClick={this.handleBasemap}>
-                        <label>{basemap.name}</label>
-                    <Scene
-                    style={{ width: '16vw', height: '16vh' }}
-                    mapProperties={{ basemap: basemap.name }}
-                    viewProperties={{
-                        center: [ -86.767960, 36.174465 ],
-                        zoom: 14
-                    }}
-                />
+                        <label htmlFor={basemap.name}>{basemap.name}</label>
+                        <br/>
+                    <img id={basemap.name} src={basemap.path} className="basemap-choice"/>
                 </Col>
                     )
                   })
