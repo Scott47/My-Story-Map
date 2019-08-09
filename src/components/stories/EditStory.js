@@ -63,6 +63,9 @@ export default class EditStory extends Component {
     return this.state.storyelements.map(e => e.orderSequence);
   };
   getMaxOrderSequence = () => {
+    if (this.orderElements.length < 1){
+      return 1;
+    }
     let biggestNum = Math.max(...this.orderElements());
     console.log(biggestNum);
     if (biggestNum == null || biggestNum==0){

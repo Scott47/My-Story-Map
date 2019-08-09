@@ -129,6 +129,20 @@
       "name": "orderly fashions",
       "description": "elmstreet",
       "id": 9
+    },
+    {
+      "userId": 1,
+      "basemapId": "2",
+      "name": "your face",
+      "description": "on a map",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "basemapId": "2",
+      "name": "now this",
+      "description": "better than ever",
+      "id": 11
     }
   ],
   "storyelements": [
@@ -161,7 +175,7 @@
     },
     {
       "storyId": 2,
-      "orderSequence": null,
+      "orderSequence": 0,
       "userId": 1,
       "text": "jlkjhlkjhlkjhlkjhlkj\n",
       "url": "",
@@ -188,7 +202,7 @@
     },
     {
       "storyId": 3,
-      "orderSequence": null,
+      "orderSequence": 0,
       "userId": 1,
       "text": "This is a National Geographic Map\n",
       "url": "",
@@ -197,7 +211,7 @@
     },
     {
       "storyId": 4,
-      "orderSequence": null,
+      "orderSequence": 0,
       "userId": 1,
       "text": "Night Time\n",
       "url": "",
@@ -224,7 +238,7 @@
     },
     {
       "storyId": 8,
-      "orderSequence": null,
+      "orderSequence": 0,
       "userId": 1,
       "text": "Jissie's Map\n",
       "url": "",
@@ -269,7 +283,7 @@
     },
     {
       "storyId": 9,
-      "orderSequence": null,
+      "orderSequence": 0,
       "userId": 1,
       "text": "things must proceed in order\n",
       "url": "",
@@ -291,8 +305,62 @@
       "userId": 1,
       "text": "dmMIT\n",
       "url": "",
-      "type": "",
+      "type": "p",
       "id": 18
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 3,
+      "userId": 1,
+      "text": "pppp\n",
+      "url": "",
+      "type": "p",
+      "id": 19
+    },
+    {
+      "storyId": 9,
+      "orderSequence": 4,
+      "userId": 1,
+      "text": "lower heading\n",
+      "url": "",
+      "type": "h1",
+      "id": 20
+    },
+    {
+      "storyId": 10,
+      "orderSequence": null,
+      "userId": 1,
+      "text": "this\n",
+      "url": "",
+      "type": "h1",
+      "id": 21
+    },
+    {
+      "storyId": 10,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "the other\n",
+      "url": "",
+      "type": "p",
+      "id": 22
+    },
+    {
+      "storyId": 11,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "stay on top\n",
+      "url": "",
+      "type": "h1",
+      "id": 23
+    },
+    {
+      "storyId": 11,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "please\n",
+      "url": "",
+      "type": "p",
+      "id": 24
     }
   ]
 }
