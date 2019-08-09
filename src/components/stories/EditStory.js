@@ -3,6 +3,7 @@ import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
 import { Scene } from "@esri/react-arcgis";
 import NewStoryElement from "./NewStoryElement";
+import SketchWidget from "../widgets/SketchWidget"
 
 export default class EditStory extends Component {
   state = {
@@ -116,7 +117,7 @@ export default class EditStory extends Component {
   render() {
     return (
       <React.Fragment>
-        <form className="editStoryForm">
+        <section className="editStoryForm">
           <Container>
             <Row>
               <Col xs="4">
@@ -159,18 +160,21 @@ export default class EditStory extends Component {
                 .map(basemap => (
                   <Col key={this.state.basemap} xs="8">
                     <Scene
-                      style={{ width: "100vw", height: "100vh" }}
+                      style={{ width: "70vw", height: "90vh" }}
                       mapProperties={{ basemap: basemap.name }}
                       viewProperties={{
                         center: [-86.76796, 36.174465],
                         zoom: 12
-                      }}
-                    />
+                      }}>
+                      <SketchWidget />
+                      </Scene>
+
                   </Col>
                 ))}
+
             </Row>
           </Container>
-        </form>
+        </section>
       </React.Fragment>
     );
   }

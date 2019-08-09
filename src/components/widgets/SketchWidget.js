@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { loadModules } from 'esri-loader'
 
 const SketchWidget = (props) => {
 
-  const [sketch, setSketch] = useState();
+
   const elementRef = useRef();
   useEffect(() => {;
     loadModules([
@@ -11,22 +11,23 @@ const SketchWidget = (props) => {
       "esri/layers/GraphicsLayer",
       "esri/views/MapView"
     ])
-      .then(([Sketch, GraphicsLayer]) => {
+      .then(([Sketch, GraphicsLayer, MapView]) => {
         // console.log(Sketch);
-
+        let map = new MapView
         let node = document.createElement("div")
         let layer = new GraphicsLayer();
         let sketch = new Sketch({
           view: props.view,
-          layer: layer
+          layer: layer,
+          map: map
         });
-        props.view.ui.add(sketch, "top-left")
+        props.view.ui.add(sketch, "top-right")
 
         console.log(node)
       })
   }, []);
   return (
-      <div id="viewDiv" ref={elementRef}>Sketch</div>
+      <div id="viewDiv" ref={elementRef}></div>
   )
 };
 

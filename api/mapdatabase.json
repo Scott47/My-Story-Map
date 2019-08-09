@@ -82,6 +82,20 @@
       "name": "Nightmare",
       "description": "elmstreet",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "basemapId": "3",
+      "name": "Nashville Night",
+      "description": "Another sick map",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "basemapId": "5",
+      "name": "Homey",
+      "description": "homey's map",
+      "id": 5
     }
   ],
   "storyelements": [
@@ -147,6 +161,33 @@
       "url": "",
       "type": "h1",
       "id": 7
+    },
+    {
+      "storyId": 4,
+      "orderSequence": null,
+      "userId": 1,
+      "text": "Night Time\n",
+      "url": "",
+      "type": "h1",
+      "id": 8
+    },
+    {
+      "storyId": 4,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "This is what it looks like from the sky at night.\n",
+      "url": "",
+      "type": "p",
+      "id": 9
+    },
+    {
+      "storyId": 4,
+      "orderSequence": 0,
+      "userId": 1,
+      "text": "adfadfadsf\n",
+      "url": "",
+      "type": "p",
+      "id": 10
     }
   ]
 }

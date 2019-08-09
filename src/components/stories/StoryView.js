@@ -52,18 +52,16 @@ export default class StoryView extends Component {
 
                 <Scene
 
-                  style={{ width: "50vw", height: "50vh" }}
+                  style={{ width: "65vw", height: "80vh" }}
                   mapProperties={{ basemap: basemap.name }}
                   viewProperties={{
                     center: [-86.76796, 36.174465],
-                    zoom: 11,
+                    zoom: 13,
                   }}
                 >
                 <BermudaTriangle />
                 <SketchWidget />
                 </Scene>
-
-
               </Col>
             ))}
         </Row>
