@@ -104,45 +104,10 @@
     },
     {
       "userId": 1,
-      "basemapId": "4",
-      "name": "Dig",
-      "description": "Deep",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "basemapId": "3",
-      "name": "Homey",
-      "description": "this is my map",
-      "id": 7
-    },
-    {
-      "userId": 1,
       "basemapId": "1",
       "name": "Jissie Stick",
       "description": "prank",
       "id": 8
-    },
-    {
-      "userId": 1,
-      "basemapId": "5",
-      "name": "orderly fashions",
-      "description": "elmstreet",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "basemapId": "2",
-      "name": "your face",
-      "description": "on a map",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "basemapId": "2",
-      "name": "now this",
-      "description": "better than ever",
-      "id": 11
     }
   ],
   "storyelements": [
@@ -282,85 +247,13 @@
       "id": 15
     },
     {
-      "storyId": 9,
-      "orderSequence": 0,
+      "storyId": 1,
+      "orderSequence": 2,
       "userId": 1,
-      "text": "things must proceed in order\n",
+      "text": "I would like to save this\n",
       "url": "",
-      "type": "h1",
+      "type": "p",
       "id": 16
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 1,
-      "userId": 1,
-      "text": "wtf is next\n",
-      "url": "",
-      "type": "p",
-      "id": 17
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "dmMIT\n",
-      "url": "",
-      "type": "p",
-      "id": 18
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 3,
-      "userId": 1,
-      "text": "pppp\n",
-      "url": "",
-      "type": "p",
-      "id": 19
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 4,
-      "userId": 1,
-      "text": "lower heading\n",
-      "url": "",
-      "type": "h1",
-      "id": 20
-    },
-    {
-      "storyId": 10,
-      "orderSequence": null,
-      "userId": 1,
-      "text": "this\n",
-      "url": "",
-      "type": "h1",
-      "id": 21
-    },
-    {
-      "storyId": 10,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "the other\n",
-      "url": "",
-      "type": "p",
-      "id": 22
-    },
-    {
-      "storyId": 11,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "stay on top\n",
-      "url": "",
-      "type": "h1",
-      "id": 23
-    },
-    {
-      "storyId": 11,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "please\n",
-      "url": "",
-      "type": "p",
-      "id": 24
     }
   ]
 }

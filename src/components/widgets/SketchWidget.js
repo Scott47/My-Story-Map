@@ -4,8 +4,6 @@ import "./SketchWidget.css"
 
 const SketchWidget = (props) => {
 
-
-
   const elementRef = useRef();
   useEffect(() => {;
     loadModules([
@@ -14,10 +12,11 @@ const SketchWidget = (props) => {
       "esri/views/MapView",
       "esri/Map",
       "esri/widgets/Locate",
-      "esri/Graphic"
+      "esri/Graphic",
+      "esri/widgets/BasemapGallery"
 
     ])
-      .then(([Sketch, GraphicsLayer, MapView, Map, Locate, Graphic ]) => {
+      .then(([Sketch, GraphicsLayer, MapView, Map, Locate, Graphic, BasemapGallery ]) => {
         // console.log(Sketch);
         // let map = new MapView
         let layer = new GraphicsLayer();
@@ -43,7 +42,7 @@ const SketchWidget = (props) => {
         });
         view.ui.add(sketch, "top-right")
 
-        var locateWidget = new Locate({
+        let locateWidget = new Locate({
           view: view,   // Attaches the Locate button to the view
           graphic: new Graphic({
             symbol: { type: "simple-marker" }  // overwrites the default symbol used for the
@@ -51,13 +50,31 @@ const SketchWidget = (props) => {
           })
         });
         view.ui.add(locateWidget, "top-left");
+        // let basemapGallery = new BasemapGallery({
+        //   view: view
+        // });
+        // view.ui.add(basemapGallery, {
+        //   position: "bottom-right"
+        // });
+        // view.on("click", function(event){
+        //   console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer)
+        // })
 
 
-        console.log(node)
       })
+      let saveMapGraphics = (evt) => {
+        evt.persist()
+        console.log(evt)
+      }
   }, []);
   return (
+    <div>
       <div id="viewDiv" ref={elementRef}></div>
+
+         <button id="save-graphics" onClick={this.saveMapGraphics}>
+                Save Map
+              </button>
+      </div>
   )
 };
 

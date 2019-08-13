@@ -3,7 +3,7 @@ import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
 import { Scene } from "@esri/react-arcgis";
 import NewStoryElement from "./NewStoryElement";
-import SketchWidget from "../widgets/SketchWidget"
+import SketchWidget from "../widgets/SketchWidget";
 
 export default class EditStory extends Component {
   state = {
@@ -40,7 +40,11 @@ export default class EditStory extends Component {
   saveStoryElement = element => {
     StoryHandler.postStoryElementId(element).then(() =>
       StoryHandler.getStoryElements(this.props.match.params.storyId).then(
-        storyelements => this.setState({ storyelements: storyelements, addStoryElement: false })
+        storyelements =>
+          this.setState({
+            storyelements: storyelements,
+            addStoryElement: false
+          })
       )
     );
   };
@@ -59,18 +63,18 @@ export default class EditStory extends Component {
   };
 
   orderElements = () => {
-    console.log("storyelements", this.state.storyelements)
+    console.log("storyelements", this.state.storyelements);
     return this.state.storyelements.map(e => e.orderSequence);
   };
   getMaxOrderSequence = () => {
-    if (this.orderElements.length < 1){
+    if (this.orderElements.length < 1) {
       return 1;
     }
     let biggestNum = Math.max(...this.orderElements());
     console.log(biggestNum);
-    if (biggestNum == null || biggestNum==0){
+    if (biggestNum == null || biggestNum == 0) {
       return 1;
-    }else {
+    } else {
       return biggestNum;
     }
   };
@@ -176,12 +180,14 @@ export default class EditStory extends Component {
                         center: [-86.76796, 36.174465],
                         zoom: 12
                       }}> */}
-                      <SketchWidget basemap={basemapx.name}/>
-                      {/* </Scene> */}
+                    <SketchWidget basemap={basemapx.name} />
 
+                    {/* </Scene> */}
                   </Col>
                 ))}
-
+              <button id="save Graphics" onClick={this.addStoryElements}>
+                +
+              </button>
             </Row>
           </Container>
         </section>

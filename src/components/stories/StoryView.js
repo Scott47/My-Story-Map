@@ -28,7 +28,7 @@ export default class StoryView extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
           <Link to={`/story/edit/${this.state.story.id}`}><Button color="link"
           id={this.state.story.id}>edit story</Button></Link>
         <Row>
@@ -53,7 +53,7 @@ export default class StoryView extends Component {
               </Col>
             ))}
         </Row>
-      </Container>
+      </div>
     );
   }
 }
