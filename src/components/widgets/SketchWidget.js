@@ -11,11 +11,13 @@ const SketchWidget = (props) => {
 
   const handleClick = (e) => {
     if (elementRef.current.contains(e.target)) {
-      console.log(e.mapPoint)
+      view.on("click", function(event){
+        console.log(event.mapPoint.latitude, event.mapPoint.longitude)
+      })
       return;
     }
   }
-  useEffect(() => {;
+  useEffect(() => {
     loadModules([
       "esri/widgets/Sketch",
       "esri/layers/GraphicsLayer",
@@ -66,21 +68,19 @@ const SketchWidget = (props) => {
         // view.ui.add(basemapGallery, {
         //   position: "bottom-right"
         // });
-        view.on("click", function(event){
-          console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer)
-        })
+
         document.addEventListener("click", handleClick)
       })
-      return () => {
-        document.removeEventListener("click", handleClick);
-      };
+      // return () => {
+      //   document.removeEventListener("click", handleClick);
+      // };
 
   }, []);
   return (
     <div>
       <div id="viewDiv" ref={elementRef}></div>
 
-         <button id="save-graphics" >
+         <button id="save-graphics" onClick={this.handleClick}>
                 Save Map
               </button>
       </div>
