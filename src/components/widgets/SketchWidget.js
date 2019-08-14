@@ -4,7 +4,17 @@ import "./SketchWidget.css"
 
 const SketchWidget = (props) => {
 
+  const saveMapGraphics = (evt) => {
+    console.log(evt)
+  }
   const elementRef = useRef();
+
+  const handleClick = (e) => {
+    if (elementRef.current.contains(e.target)) {
+      console.log(e.mapPoint)
+      return;
+    }
+  }
   useEffect(() => {;
     loadModules([
       "esri/widgets/Sketch",
@@ -56,22 +66,21 @@ const SketchWidget = (props) => {
         // view.ui.add(basemapGallery, {
         //   position: "bottom-right"
         // });
-        // view.on("click", function(event){
-        //   console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer)
-        // })
-
-
+        view.on("click", function(event){
+          console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer)
+        })
+        document.addEventListener("click", handleClick)
       })
-      let saveMapGraphics = (evt) => {
-        evt.persist()
-        console.log(evt)
-      }
+      return () => {
+        document.removeEventListener("click", handleClick);
+      };
+
   }, []);
   return (
     <div>
       <div id="viewDiv" ref={elementRef}></div>
 
-         <button id="save-graphics" onClick={this.saveMapGraphics}>
+         <button id="save-graphics" >
                 Save Map
               </button>
       </div>
