@@ -185,9 +185,7 @@ export default class EditStory extends Component {
                     {/* </Scene> */}
                   </Col>
                 ))}
-              <button id="save Graphics" onClick={this.addStoryElements}>
-                +
-              </button>
+
             </Row>
           </Container>
         </section>
