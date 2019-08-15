@@ -15,7 +15,7 @@ export default class EditStory extends Component {
     mapItems: []
   };
 
-  handleClick = items => {
+  handleClick = items => {console.log(items)
     if (items.length !== 0) {
       items.forEach(itemObj => {
         if (itemObj.geometry.latitude) {

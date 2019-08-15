@@ -165,6 +165,15 @@
       },
       "type": "point",
       "id": 2
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16680516516342,
+        "longitude": -86.7717154278955
+      },
+      "type": "point",
+      "id": 3
     }
   ]
 }
