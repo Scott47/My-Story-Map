@@ -44,7 +44,7 @@ let layer;
             components: ["attribution", "zoom", "compass", "locate"] // empty the UI, except for attribution
           }
         });
-        let node = document.createElement("div")
+
         let sketch = new Sketch({
           view: view,
           layer: layer,
