@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
-import { Scene } from "@esri/react-arcgis";
 import NewStoryElement from "./NewStoryElement";
 import SketchWidget from "../widgets/SketchWidget";
 
@@ -12,19 +11,28 @@ export default class EditStory extends Component {
     basemap: "",
     storyelements: [],
     editElement: {},
-    addStoryElement: false
+    addStoryElement: false,
+    mapItems: []
   };
 
-  handleClick = (items) => {
-   if (items.length !== 0){
-     items.forEach(itemObj => {
-       console.log(itemObj)
-
-     });
-   }
-      return;
+  handleClick = items => {
+    if (items.length !== 0) {
+      items.forEach(itemObj => {
+        if (itemObj.geometry.latitude) {
+          let point = {
+            storyId: this.props.match.params.storyId,
+            geometry: {
+              latitude: itemObj.geometry.latitude,
+              longitude: itemObj.geometry.longitude
+            },
+            type: "point"
+          };
+          this.saveMapItem (point)
+        }
+      });
     }
-
+    return;
+  };
 
   handleFieldChange = evt => {
     console.log(evt.target.id);
@@ -42,6 +50,18 @@ export default class EditStory extends Component {
         editElementText: storyelement.text
       });
     });
+  };
+
+  saveMapItem = mapItems => {
+    StoryHandler.postMapItems(mapItems).then(() =>
+      StoryHandler.getMapItems(this.props.match.params.storyId).then(
+        mapItems => {
+          this.setState({
+            mapItems: mapItems
+          });
+        }
+      )
+    );
   };
 
   addStoryElements = evt => {
@@ -191,12 +211,14 @@ export default class EditStory extends Component {
                         center: [-86.76796, 36.174465],
                         zoom: 12
                       }}> */}
-                    <SketchWidget basemap={basemapx.name} handleClick={this.handleClick} />
+                    <SketchWidget
+                      basemap={basemapx.name}
+                      handleClick={this.handleClick}
+                    />
 
                     {/* </Scene> */}
                   </Col>
                 ))}
-
             </Row>
           </Container>
         </section>

@@ -6,7 +6,6 @@ import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
 import StoryHandler from "./apiManager/StoryHandler"
 import BaseMapHandler from './apiManager/BaseMapHandler';
-import StoryList from "./stories/StoryList"
 import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
@@ -108,23 +107,18 @@ class ApplicationViews extends Component {
               <NewStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
-          <Route exact path="/stories" render={props => {
+          {/* <Route exact path="/stories" render={props => {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
                   <StoryList stories={this.state.stories} basemaps={this.state.basemaps}/>
                   </div>
             )
-          }} />
+          }} /> */}
           <Route path="/story/edit/:storyId(\d+)" render={props => {
             return (
               <EditStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
-          {/* <Route exact path="/test" render={props => {
-            return (
-              <Zoom {...props} />
-            )
-          }} /> */}
       </React.Fragment>
       )
   }

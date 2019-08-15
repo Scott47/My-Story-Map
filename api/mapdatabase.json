@@ -150,9 +150,21 @@
   "mapItems": [
     {
       "storyId": 1,
-      "geometry": {"latitude": 36.166064340048486, "longitude": -86.77135902937265},
+      "geometry": {
+        "latitude": 36.166064340048486,
+        "longitude": -86.77135902937265
+      },
       "type": "point",
       "id": 1
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16645356507759,
+        "longitude": -86.77177309538932
+      },
+      "type": "point",
+      "id": 2
     }
   ]
 }
