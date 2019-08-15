@@ -15,6 +15,17 @@ export default class EditStory extends Component {
     addStoryElement: false
   };
 
+  handleClick = (items) => {
+   if (items.length !== 0){
+     items.forEach(itemObj => {
+       console.log(itemObj)
+
+     });
+   }
+      return;
+    }
+
+
   handleFieldChange = evt => {
     console.log(evt.target.id);
     const stateToChange = {};
@@ -180,7 +191,7 @@ export default class EditStory extends Component {
                         center: [-86.76796, 36.174465],
                         zoom: 12
                       }}> */}
-                    <SketchWidget basemap={basemapx.name} />
+                    <SketchWidget basemap={basemapx.name} handleClick={this.handleClick} />
 
                     {/* </Scene> */}
                   </Col>

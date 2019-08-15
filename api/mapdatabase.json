@@ -80,34 +80,6 @@
       "name": "Nightmare",
       "description": "elmstreet",
       "id": 2
-    },
-    {
-      "userId": 1,
-      "basemapId": "5",
-      "name": "Nightmare",
-      "description": "elmstreet",
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "basemapId": "3",
-      "name": "Nashville Night",
-      "description": "Another sick map",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "basemapId": "5",
-      "name": "Homey",
-      "description": "homey's map",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "basemapId": "1",
-      "name": "Jissie Stick",
-      "description": "prank",
-      "id": 8
     }
   ],
   "storyelements": [
@@ -166,87 +138,6 @@
       "id": 6
     },
     {
-      "storyId": 3,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "This is a National Geographic Map\n",
-      "url": "",
-      "type": "h1",
-      "id": 7
-    },
-    {
-      "storyId": 4,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "Night Time\n",
-      "url": "",
-      "type": "h1",
-      "id": 8
-    },
-    {
-      "storyId": 4,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "This is what it looks like from the sky at night.\n",
-      "url": "",
-      "type": "p",
-      "id": 9
-    },
-    {
-      "storyId": 4,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "adfadfadsf\n",
-      "url": "",
-      "type": "p",
-      "id": 10
-    },
-    {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "Jissie's Map\n",
-      "url": "",
-      "type": "h1",
-      "id": 11
-    },
-    {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "hi jissie\n",
-      "url": "",
-      "type": "p",
-      "id": 12
-    },
-    {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "sup\n",
-      "url": "",
-      "type": "h1",
-      "id": 13
-    },
-    {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "cool\n",
-      "url": "",
-      "type": "p",
-      "id": 14
-    },
-    {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "photos all over town\n",
-      "url": "",
-      "type": "p",
-      "id": 15
-    },
-    {
       "storyId": 1,
       "orderSequence": 2,
       "userId": 1,
@@ -254,6 +145,14 @@
       "url": "",
       "type": "p",
       "id": 16
+    }
+  ],
+  "mapItems": [
+    {
+      "storyId": 1,
+      "geometry": {"latitude": 36.166064340048486, "longitude": -86.77135902937265},
+      "type": "point",
+      "id": 1
     }
   ]
 }

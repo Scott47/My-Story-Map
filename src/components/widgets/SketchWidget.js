@@ -8,13 +8,14 @@ const SketchWidget = (props) => {
     console.log(evt)
   }
   const elementRef = useRef();
-  const handleClick = (e) => {
-    if (elementRef.current.contains(e.currentTarget)) {
-      console.log(e)
-      return;
-    }
-  }
-
+  // const handleClick = (e) => {
+  //   if (elementRef.current.contains(e.currentTarget)) {
+  //     console.log(e)
+  //     return;
+  //   }
+  // }
+let view;
+let layer;
   useEffect(() => {
     loadModules([
       "esri/widgets/Sketch",
@@ -28,17 +29,17 @@ const SketchWidget = (props) => {
     ])
       .then(([Sketch, GraphicsLayer, MapView, Map, Locate, Graphic, BasemapGallery ]) => {
 
-        let layer = new GraphicsLayer();
+        layer = new GraphicsLayer();
         let map = new Map({
           basemap: props.basemap,
           layers: [layer]
         });
 
-        let view = new MapView({
+        view = new MapView({
           container: "viewDiv",
           map: map,
           center: [-86.76796, 36.174465],
-          zoom: 12,
+          zoom: 14,
           ui: {
             components: ["attribution", "zoom", "compass", "locate"] // empty the UI, except for attribution
           }
@@ -59,34 +60,36 @@ const SketchWidget = (props) => {
           })
         });
         view.ui.add(locateWidget, "top-left");
-        // let basemapGallery = new BasemapGallery({
-        //   view: view
-        // });
-        // view.ui.add(basemapGallery, {
-        //   position: "bottom-right"
-        // });
+        let basemapGallery = new BasemapGallery({
+          view: view
+        });
+        view.ui.add(basemapGallery, {
+          position: "bottom-right"
+        });
 
-        document.addEventListener("click", handleClick)
+        // document.addEventListener("click", handleClick)
         view.on("click", function(event){
-          console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer.graphics.items[0].geometry.paths[0])
+          console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer )
         })
       })
-      return () => {
-        document.removeEventListener("click", handleClick);
-      };
+      // return () => {
+
+      //   document.removeEventListener("click", handleClick);
+      // };
 
 
   }, []);
   return (
     <div>
-      <div id="viewDiv" ref={elementRef}></div>
-
-         <button id="save-graphics" >
-                Save Map
-              </button>
-      </div>
+    <div id="viewDiv" ref={elementRef}></div>
+       <button id="save-graphics" onClick={() => props.handleClick(layer.graphics.items)}>
+              Save Map
+            </button>
+    </div>
   )
 };
+
+// layer.graphics.items
 
 export default SketchWidget;
 
