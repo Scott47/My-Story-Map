@@ -84,65 +84,9 @@
     {
       "userId": 1,
       "basemapId": "5",
-      "name": "Nightmare",
-      "description": "elmstreet",
+      "name": "Joes House",
+      "description": "nightmare fuel",
       "id": 3
-    },
-    {
-      "userId": 1,
-      "basemapId": "3",
-      "name": "Nashville Night",
-      "description": "Another sick map",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "basemapId": "5",
-      "name": "Homey",
-      "description": "homey's map",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "basemapId": "4",
-      "name": "Dig",
-      "description": "Deep",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "basemapId": "3",
-      "name": "Homey",
-      "description": "this is my map",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "basemapId": "1",
-      "name": "Jissie Stick",
-      "description": "prank",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "basemapId": "5",
-      "name": "orderly fashions",
-      "description": "elmstreet",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "basemapId": "2",
-      "name": "your face",
-      "description": "on a map",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "basemapId": "2",
-      "name": "now this",
-      "description": "better than ever",
-      "id": 11
     }
   ],
   "storyelements": [
@@ -169,7 +113,7 @@
       "storyId": 1,
       "orderSequence": 1,
       "userId": 1,
-      "text": "this is the first and last  \n",
+      "text": "this is the first and last of whatever \n",
       "url": "",
       "type": "p"
     },
@@ -201,166 +145,150 @@
       "id": 6
     },
     {
-      "storyId": 3,
-      "orderSequence": 0,
+      "storyId": 1,
+      "orderSequence": 2,
       "userId": 1,
-      "text": "This is a National Geographic Map\n",
+      "text": "I would like to save this\n",
       "url": "",
-      "type": "h1",
+      "type": "p",
+      "id": 16
+    }
+  ],
+  "mapItems": [
+    {
+      "storyId": 1,
+      "geometry": {
+        "latitude": 36.166064340048486,
+        "longitude": -86.77135902937265
+      },
+      "type": "point",
+      "id": 1
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.167468031243345,
+        "longitude": -86.78202718045326
+      },
+      "type": "point",
+      "id": 2
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.159464001906606,
+        "longitude": -86.77825632985446
+      },
+      "type": "point",
+      "id": 3
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16642568601946,
+        "longitude": -86.79023842807621
+      },
+      "type": "point",
+      "id": 4
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.17261026327755,
+        "longitude": -86.76831740434977
+      },
+      "type": "point",
+      "id": 5
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.191729293150445,
+        "longitude": -86.78307827111095
+      },
+      "type": "point",
+      "id": 6
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.19090617500742,
+        "longitude": -86.77726240377658
+      },
+      "type": "point",
       "id": 7
     },
     {
-      "storyId": 4,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "Night Time\n",
-      "url": "",
-      "type": "h1",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.157225055282815,
+        "longitude": -86.77702184315535
+      },
+      "type": "point",
       "id": 8
     },
     {
-      "storyId": 4,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "This is what it looks like from the sky at night.\n",
-      "url": "",
-      "type": "p",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.157225055282815,
+        "longitude": -86.77702184315535
+      },
+      "type": "point",
       "id": 9
     },
     {
-      "storyId": 4,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "adfadfadsf\n",
-      "url": "",
-      "type": "p",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16828246376168,
+        "longitude": -86.77597779329629
+      },
+      "type": "point",
       "id": 10
     },
     {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "Jissie's Map\n",
-      "url": "",
-      "type": "h1",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.1700788408282,
+        "longitude": -86.78699530210109
+      },
+      "type": "point",
       "id": 11
     },
     {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "hi jissie\n",
-      "url": "",
-      "type": "p",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.187011263944285,
+        "longitude": -86.77952534999461
+      },
+      "type": "point",
       "id": 12
     },
     {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "sup\n",
-      "url": "",
-      "type": "h1",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16091058025704,
+        "longitude": -86.76939632292601
+      },
+      "type": "point",
       "id": 13
     },
     {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "cool\n",
-      "url": "",
-      "type": "p",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.162180645381014,
+        "longitude": -86.77255965318295
+      },
+      "type": "point",
       "id": 14
     },
     {
-      "storyId": 8,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "photos all over town\n",
-      "url": "",
-      "type": "p",
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.18294107245929,
+        "longitude": -86.77772961105914
+      },
+      "type": "point",
       "id": 15
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 0,
-      "userId": 1,
-      "text": "things must proceed in order\n",
-      "url": "",
-      "type": "h1",
-      "id": 16
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 1,
-      "userId": 1,
-      "text": "wtf is next\n",
-      "url": "",
-      "type": "p",
-      "id": 17
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "dmMIT\n",
-      "url": "",
-      "type": "p",
-      "id": 18
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 3,
-      "userId": 1,
-      "text": "pppp\n",
-      "url": "",
-      "type": "p",
-      "id": 19
-    },
-    {
-      "storyId": 9,
-      "orderSequence": 4,
-      "userId": 1,
-      "text": "lower heading\n",
-      "url": "",
-      "type": "h1",
-      "id": 20
-    },
-    {
-      "storyId": 10,
-      "orderSequence": null,
-      "userId": 1,
-      "text": "this\n",
-      "url": "",
-      "type": "h1",
-      "id": 21
-    },
-    {
-      "storyId": 10,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "the other\n",
-      "url": "",
-      "type": "p",
-      "id": 22
-    },
-    {
-      "storyId": 11,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "stay on top\n",
-      "url": "",
-      "type": "h1",
-      "id": 23
-    },
-    {
-      "storyId": 11,
-      "orderSequence": 2,
-      "userId": 1,
-      "text": "please\n",
-      "url": "",
-      "type": "p",
-      "id": 24
     }
   ]
 }

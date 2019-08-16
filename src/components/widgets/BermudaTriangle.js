@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { loadModules } from '@esri/react-arcgis';
 
 const BermudaTriangle = (props) => {
 
     const [graphic, setGraphic] = useState(null);
+
+    console.log(elementRef)
     useEffect(() => {
 
         loadModules(['esri/Graphic']).then(([Graphic]) => {
@@ -42,7 +44,9 @@ const BermudaTriangle = (props) => {
         };
     }, []);
 
-    return null;
+    return (
+        <div id="viewDiv" ref={elementRef}></div>
+    );
 
 }
 

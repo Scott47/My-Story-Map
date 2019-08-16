@@ -4,31 +4,34 @@ import StoryHandler from "../apiManager/StoryHandler";
 import { Container, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom"
 import "./Story.css";
-// import SearchWidget from "../widgets/SearchWidget"
-import BermudaTriangle from '../widgets/BermudaTriangle'
-import SketchWidget from '../widgets/SketchWidget'
+import MapGraphic from './MapGraphic'
 
 
 export default class StoryView extends Component {
   state = {
     storyelements: [],
-    story: {}
+    story: {},
+    points: []
   };
 
   componentDidMount() {
+    console.log("props", this.props)
     const newState = {};
     StoryHandler.getStoryElements(this.props.match.params.storyId).then(
       storyelements => this.setState({ storyelements: storyelements })
     );
     StoryHandler.get(this.props.match.params.storyId).then(story => {
-      console.log(story);
       this.setState({ story: story });
     });
+    StoryHandler.getMapItems(this.props.match.params.storyId).then(points => {
+      console.log(points)
+      this.setState({ points: points })
+    })
   }
 
   render() {
     return (
-      <Container>
+      <div>
           <Link to={`/story/edit/${this.state.story.id}`}><Button color="link"
           id={this.state.story.id}>edit story</Button></Link>
         <Row>
@@ -49,11 +52,11 @@ export default class StoryView extends Component {
             .filter(basemap => basemap.id === +this.state.story.basemapId)
             .map(basemapx => (
               <Col key={this.state.story.id} xs="8">
-                <SketchWidget basemap={basemapx.name}/>
+                <MapGraphic basemap={basemapx.name} storyId={this.props.match.params.storyId} points={this.state.points}/>
               </Col>
             ))}
         </Row>
-      </Container>
+      </div>
     );
   }
 }

@@ -29,3 +29,7 @@
     display: flex;
     justify-content: space-evenly;
   }
+  h3 {
+    display: table;
+    margin: auto;
+  }

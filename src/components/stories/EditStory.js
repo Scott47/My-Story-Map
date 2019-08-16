@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
-import { Scene } from "@esri/react-arcgis";
 import NewStoryElement from "./NewStoryElement";
-import SketchWidget from "../widgets/SketchWidget"
+import SketchWidget from "../widgets/SketchWidget";
+import { loadModules } from "esri-loader"
 
 export default class EditStory extends Component {
   state = {
@@ -12,7 +12,31 @@ export default class EditStory extends Component {
     basemap: "",
     storyelements: [],
     editElement: {},
-    addStoryElement: false
+    addStoryElement: false,
+    mapItems: [],
+    layer: {}
+  };
+
+
+
+  handleClick = items => {
+    console.log(items);
+    if (items.length !== 0) {
+      items.forEach(itemObj => {
+        if (itemObj.geometry.latitude) {
+          let point = {
+            storyId: this.props.match.params.storyId,
+            geometry: {
+              latitude: itemObj.geometry.latitude,
+              longitude: itemObj.geometry.longitude
+            },
+            type: "point"
+          };
+          this.saveMapItem(point);
+        }
+      });
+    }
+    return;
   };
 
   handleFieldChange = evt => {
@@ -33,6 +57,18 @@ export default class EditStory extends Component {
     });
   };
 
+  saveMapItem = mapItems => {
+    StoryHandler.postMapItems(mapItems).then(() =>
+      StoryHandler.getMapItems(this.props.match.params.storyId).then(
+        mapItems => {
+          this.setState({
+            mapItems: mapItems
+          });
+        }
+      )
+    );
+  };
+
   addStoryElements = evt => {
     evt.preventDefault();
     this.setState({ addStoryElement: true });
@@ -40,7 +76,11 @@ export default class EditStory extends Component {
   saveStoryElement = element => {
     StoryHandler.postStoryElementId(element).then(() =>
       StoryHandler.getStoryElements(this.props.match.params.storyId).then(
-        storyelements => this.setState({ storyelements: storyelements, addStoryElement: false })
+        storyelements =>
+          this.setState({
+            storyelements: storyelements,
+            addStoryElement: false
+          })
       )
     );
   };
@@ -59,18 +99,18 @@ export default class EditStory extends Component {
   };
 
   orderElements = () => {
-    console.log("storyelements", this.state.storyelements)
+    console.log("storyelements", this.state.storyelements);
     return this.state.storyelements.map(e => e.orderSequence);
   };
   getMaxOrderSequence = () => {
-    if (this.orderElements.length < 1){
+    if (this.orderElements.length < 1) {
       return 1;
     }
     let biggestNum = Math.max(...this.orderElements());
     console.log(biggestNum);
-    if (biggestNum == null || biggestNum==0){
+    if (biggestNum == null || biggestNum == 0) {
       return 1;
-    }else {
+    } else {
       return biggestNum;
     }
   };
@@ -122,6 +162,12 @@ export default class EditStory extends Component {
     StoryHandler.getStoryElements(this.props.match.params.storyId).then(
       storyelements => this.setState({ storyelements: storyelements })
     );
+    loadModules(["esri/layers/GraphicsLayer"]).then(([GraphicsLayer]) => {
+     let layer = new GraphicsLayer()
+      this.setState({
+        layer: layer
+      })
+        })
   }
 
   render() {
@@ -169,19 +215,14 @@ export default class EditStory extends Component {
                 .filter(basemap => basemap.id == this.state.basemap)
                 .map(basemapx => (
                   <Col key={this.state.basemap} xs="8">
-                    {/* <Scene
-                      style={{ width: "70vw", height: "90vh" }}
-                      mapProperties={{ basemap: basemap.name }}
-                      viewProperties={{
-                        center: [-86.76796, 36.174465],
-                        zoom: 12
-                      }}> */}
-                      <SketchWidget basemap={basemapx.name}/>
-                      {/* </Scene> */}
+                    <SketchWidget
+                      basemap={basemapx.name}
+                      handleClick={this.handleClick}
+                      layer={this.state.layer}
+                    />
 
                   </Col>
                 ))}
-
             </Row>
           </Container>
         </section>

@@ -6,16 +6,11 @@ import Register from "./welcome/Register"
 import UserHandler from "./apiManager/UserHandler";
 import StoryHandler from "./apiManager/StoryHandler"
 import BaseMapHandler from './apiManager/BaseMapHandler';
-import StoryList from "./stories/StoryList"
 import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
 import NewStory from './stories/NewStory';
-import NavBar from "./nav/NavBar"
 import "./nav/NavBar.css"
-
-import Zoom from "./widgets/Zoom"
-
 
 class ApplicationViews extends Component {
   state = {
@@ -48,7 +43,6 @@ class ApplicationViews extends Component {
         })
       );
 
-
   getUserStories = () =>
     StoryHandler.getUserStories(this.state.currentUserId)
       .then(currentUserStories => {
@@ -56,8 +50,6 @@ class ApplicationViews extends Component {
           currentUserStories: currentUserStories
         })
       })
-
-
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
@@ -108,23 +100,18 @@ class ApplicationViews extends Component {
               <NewStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
-          <Route exact path="/stories" render={props => {
+          {/* <Route exact path="/stories" render={props => {
             return(
               <div style={{ width: '100vw', height: '100vh' }}>
                   <StoryList stories={this.state.stories} basemaps={this.state.basemaps}/>
                   </div>
             )
-          }} />
+          }} /> */}
           <Route path="/story/edit/:storyId(\d+)" render={props => {
             return (
               <EditStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
-          {/* <Route exact path="/test" render={props => {
-            return (
-              <Zoom {...props} />
-            )
-          }} /> */}
       </React.Fragment>
       )
   }

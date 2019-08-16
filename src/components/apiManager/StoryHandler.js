@@ -46,5 +46,14 @@ deleteStory: {
         return ApiHandler.delete("stories", id)
     }
 },
-
+postMapItems: {
+    value: function (graphics) {
+        return ApiHandler.post("mapItems", graphics)
+    }
+},
+getMapItems: {
+    value: function (storyId) {
+        return ApiHandler.getWithQuery("mapItems", `storyId=${storyId}`)
+    }
+}
 })
