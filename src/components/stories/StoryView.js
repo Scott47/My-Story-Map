@@ -15,6 +15,7 @@ export default class StoryView extends Component {
   };
 
   componentDidMount() {
+    console.log("props", this.props)
     const newState = {};
     StoryHandler.getStoryElements(this.props.match.params.storyId).then(
       storyelements => this.setState({ storyelements: storyelements })
@@ -51,7 +52,7 @@ export default class StoryView extends Component {
             .filter(basemap => basemap.id === +this.state.story.basemapId)
             .map(basemapx => (
               <Col key={this.state.story.id} xs="8">
-                <MapGraphic basemap={basemapx.name} points={this.state.points}/>
+                <MapGraphic basemap={basemapx.name} storyId={this.props.match.params.storyId} points={this.state.points}/>
               </Col>
             ))}
         </Row>

@@ -80,6 +80,13 @@
       "name": "Nightmare",
       "description": "elmstreet",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "basemapId": "5",
+      "name": "Joes House",
+      "description": "nightmare fuel",
+      "id": 3
     }
   ],
   "storyelements": [
@@ -106,7 +113,7 @@
       "storyId": 1,
       "orderSequence": 1,
       "userId": 1,
-      "text": "this is the first and last  \n",
+      "text": "this is the first and last of whatever \n",
       "url": "",
       "type": "p"
     },
@@ -160,8 +167,8 @@
     {
       "storyId": "1",
       "geometry": {
-        "latitude": 36.16645356507759,
-        "longitude": -86.77177309538932
+        "latitude": 36.167468031243345,
+        "longitude": -86.78202718045326
       },
       "type": "point",
       "id": 2
@@ -169,8 +176,8 @@
     {
       "storyId": "1",
       "geometry": {
-        "latitude": 36.16680516516342,
-        "longitude": -86.7717154278955
+        "latitude": 36.159464001906606,
+        "longitude": -86.77825632985446
       },
       "type": "point",
       "id": 3
@@ -178,8 +185,8 @@
     {
       "storyId": "1",
       "geometry": {
-        "latitude": 36.16622214152759,
-        "longitude": -86.77179924692722
+        "latitude": 36.16642568601946,
+        "longitude": -86.79023842807621
       },
       "type": "point",
       "id": 4
@@ -187,8 +194,8 @@
     {
       "storyId": "1",
       "geometry": {
-        "latitude": 36.16609221923514,
-        "longitude": -86.77145424779268
+        "latitude": 36.17261026327755,
+        "longitude": -86.76831740434977
       },
       "type": "point",
       "id": 5
@@ -196,8 +203,8 @@
     {
       "storyId": "1",
       "geometry": {
-        "latitude": 36.166198863799366,
-        "longitude": -86.77200778867812
+        "latitude": 36.191729293150445,
+        "longitude": -86.78307827111095
       },
       "type": "point",
       "id": 6
@@ -205,11 +212,83 @@
     {
       "storyId": "1",
       "geometry": {
-        "latitude": 36.16644355027143,
-        "longitude": -86.77140797968718
+        "latitude": 36.19090617500742,
+        "longitude": -86.77726240377658
       },
       "type": "point",
       "id": 7
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.157225055282815,
+        "longitude": -86.77702184315535
+      },
+      "type": "point",
+      "id": 8
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.157225055282815,
+        "longitude": -86.77702184315535
+      },
+      "type": "point",
+      "id": 9
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16828246376168,
+        "longitude": -86.77597779329629
+      },
+      "type": "point",
+      "id": 10
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.1700788408282,
+        "longitude": -86.78699530210109
+      },
+      "type": "point",
+      "id": 11
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.187011263944285,
+        "longitude": -86.77952534999461
+      },
+      "type": "point",
+      "id": 12
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.16091058025704,
+        "longitude": -86.76939632292601
+      },
+      "type": "point",
+      "id": 13
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.162180645381014,
+        "longitude": -86.77255965318295
+      },
+      "type": "point",
+      "id": 14
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 36.18294107245929,
+        "longitude": -86.77772961105914
+      },
+      "type": "point",
+      "id": 15
     }
   ]
 }

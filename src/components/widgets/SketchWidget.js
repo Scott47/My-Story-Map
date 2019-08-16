@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import { loadModules } from 'esri-loader'
-import "./SketchWidget.css"
+import React, { useState, useEffect, useRef } from "react";
+import { loadModules } from "esri-loader";
+import "./SketchWidget.css";
 
-const SketchWidget = (props) => {
+const SketchWidget = props => {
 
-  const saveMapGraphics = (evt) => {
-    console.log(evt)
-  }
+  const [layer, setLayer] = useState(props.layer);
+
   const elementRef = useRef();
   // const handleClick = (e) => {
   //   if (elementRef.current.contains(e.currentTarget)) {
@@ -14,9 +13,11 @@ const SketchWidget = (props) => {
   //     return;
   //   }
   // }
-let view;
-let layer;
+  let view;
+  // let layer=null;
   useEffect(() => {
+    console.log(layer)
+    setLayer(props.layer)
     loadModules([
       "esri/widgets/Sketch",
       "esri/layers/GraphicsLayer",
@@ -25,11 +26,20 @@ let layer;
       "esri/widgets/Locate",
       "esri/Graphic",
       "esri/widgets/BasemapGallery"
+    ]).then(
+      ([
+        Sketch,
+        GraphicsLayer,
+        MapView,
+        Map,
+        Locate,
+        Graphic,
+        BasemapGallery
+      ]) => {
+       let layer = new GraphicsLayer();
 
-    ])
-      .then(([Sketch, GraphicsLayer, MapView, Map, Locate, Graphic, BasemapGallery ]) => {
+        setLayer(layer);
 
-        layer = new GraphicsLayer();
         let map = new Map({
           basemap: props.basemap,
           layers: [layer]
@@ -47,15 +57,14 @@ let layer;
 
         let sketch = new Sketch({
           view: view,
-          layer: layer,
-
+          layer: layer
         });
-        view.ui.add(sketch, "top-right")
+        view.ui.add(sketch, "top-right");
 
         let locateWidget = new Locate({
-          view: view,   // Attaches the Locate button to the view
+          view: view, // Attaches the Locate button to the view
           graphic: new Graphic({
-            symbol: { type: "simple-marker" }  // overwrites the default symbol used for the
+            symbol: { type: "simple-marker" } // overwrites the default symbol used for the
             // graphic placed at the location of the user when found
           })
         });
@@ -68,38 +77,29 @@ let layer;
         });
 
         // document.addEventListener("click", handleClick)
-        view.on("click", function(event){
-          console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer )
-        })
-      })
-      // return () => {
+        view.on("click", function(event) {
+          console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer);
+        });
+      }
+    );
+    // return () => {
 
-      //   document.removeEventListener("click", handleClick);
-      // };
-
-
+    //   document.removeEventListener("click", handleClick);
+    // };
   }, []);
   return (
     <div>
-    <div id="viewDiv" ref={elementRef}></div>
-       <button id="save-graphics" onClick={() => props.handleClick(layer.graphics.items)}>
-              Save Map
-            </button>
+      <div id="viewDiv" ref={elementRef} />
+      <button
+        id="save-graphics"
+        onClick={() => props.handleClick(layer.graphics.items)}
+      >
+        Save Map
+      </button>
     </div>
-  )
+  );
 };
 
 // layer.graphics.items
 
 export default SketchWidget;
-
-
-
-
-
-
-
-
-
-
-

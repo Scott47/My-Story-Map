@@ -4,7 +4,7 @@ import { loadModules } from '@esri/react-arcgis';
 const BermudaTriangle = (props) => {
 
     const [graphic, setGraphic] = useState(null);
-    const elementRef = useRef();
+
     console.log(elementRef)
     useEffect(() => {
 

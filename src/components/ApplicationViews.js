@@ -10,11 +10,7 @@ import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
 import NewStory from './stories/NewStory';
-import NavBar from "./nav/NavBar"
 import "./nav/NavBar.css"
-
-import Zoom from "./widgets/Zoom"
-
 
 class ApplicationViews extends Component {
   state = {
@@ -47,7 +43,6 @@ class ApplicationViews extends Component {
         })
       );
 
-
   getUserStories = () =>
     StoryHandler.getUserStories(this.state.currentUserId)
       .then(currentUserStories => {
@@ -55,8 +50,6 @@ class ApplicationViews extends Component {
           currentUserStories: currentUserStories
         })
       })
-
-
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 

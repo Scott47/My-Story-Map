@@ -1,13 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
 // import EditStory from './EditStory'
+import StoryHandler from "../apiManager/StoryHandler";
 
 const MapGraphic = props => {
   console.log(props);
 
   const elementRef = useRef();
   const [graphic, setGraphic] = useState(null);
+  const [points, setPoints] = useState(props.points);
+  const mounted = useRef();
+
   useEffect(() => {
+    setPoints(props.points);
     loadModules([
       "esri/Graphic",
       "esri/views/MapView",
@@ -20,6 +25,12 @@ const MapGraphic = props => {
           basemap: props.basemap,
           layers: [layer]
         });
+
+        if (!mounted.current) {
+          mounted.current = true;
+        } else {
+          setPoints(props.points);
+        }
 
         let view = new MapView({
           map: map,
@@ -41,7 +52,7 @@ const MapGraphic = props => {
         };
 
         const renderPoint = pointObject => {
-          console.log(pointObject)
+          console.log(pointObject);
           ///start function definition like renderPoint - takes in an object that is a pointobj, it will wrap the below up to the next comment
           const point = {
             type: "point",
@@ -54,14 +65,16 @@ const MapGraphic = props => {
             symbol: simpleMarkerSymbol
           });
 
-          setGraphic(graphic);
+          //setGraphic(graphic);
           view.graphics.add(graphic);
         };
 
-        props.points.forEach(pointObject => {
-
-          renderPoint(pointObject);
-        }); ///end function wrapping -- this is the set of shit you need to call again and again in the loop of points
+        StoryHandler.getMapItems(props.storyId).then(points => {
+          setPoints(points);
+          points.forEach(pointObject => {
+            renderPoint(pointObject);
+          });
+        });
       })
       .catch(err => console.error(err));
 

@@ -3,6 +3,7 @@ import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
 import NewStoryElement from "./NewStoryElement";
 import SketchWidget from "../widgets/SketchWidget";
+import { loadModules } from "esri-loader"
 
 export default class EditStory extends Component {
   state = {
@@ -12,10 +13,14 @@ export default class EditStory extends Component {
     storyelements: [],
     editElement: {},
     addStoryElement: false,
-    mapItems: []
+    mapItems: [],
+    layer: {}
   };
 
-  handleClick = items => {console.log(items)
+
+
+  handleClick = items => {
+    console.log(items);
     if (items.length !== 0) {
       items.forEach(itemObj => {
         if (itemObj.geometry.latitude) {
@@ -27,7 +32,7 @@ export default class EditStory extends Component {
             },
             type: "point"
           };
-          this.saveMapItem (point)
+          this.saveMapItem(point);
         }
       });
     }
@@ -157,6 +162,12 @@ export default class EditStory extends Component {
     StoryHandler.getStoryElements(this.props.match.params.storyId).then(
       storyelements => this.setState({ storyelements: storyelements })
     );
+    loadModules(["esri/layers/GraphicsLayer"]).then(([GraphicsLayer]) => {
+     let layer = new GraphicsLayer()
+      this.setState({
+        layer: layer
+      })
+        })
   }
 
   render() {
@@ -204,19 +215,12 @@ export default class EditStory extends Component {
                 .filter(basemap => basemap.id == this.state.basemap)
                 .map(basemapx => (
                   <Col key={this.state.basemap} xs="8">
-                    {/* <Scene
-                      style={{ width: "70vw", height: "90vh" }}
-                      mapProperties={{ basemap: basemap.name }}
-                      viewProperties={{
-                        center: [-86.76796, 36.174465],
-                        zoom: 12
-                      }}> */}
                     <SketchWidget
                       basemap={basemapx.name}
                       handleClick={this.handleClick}
+                      layer={this.state.layer}
                     />
 
-                    {/* </Scene> */}
                   </Col>
                 ))}
             </Row>
