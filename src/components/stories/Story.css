@@ -1,8 +1,11 @@
 .stories {
     display: flex;
-    justify-content: space-evenly;
+    margin-left: 20px;
+    background-color: #68728c;
 }
-
+.storyTitle {
+    text-align: center;
+}
 .card {
     width: 10rem;
 }
@@ -24,3 +27,10 @@
 .storyelements {
     overflow-y: scroll
 }
+.image {
+    max-width: 100%;
+}
+#root {
+    background-color:#68728c;
+}
+

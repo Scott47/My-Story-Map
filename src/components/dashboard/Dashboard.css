@@ -4,10 +4,10 @@
     width: 100%
   }
 
-  .dashboard-row {
+  /* .dashboard-row {
     display: flex;
     flex-direction: row;
-  }
+  } */
 
   .dashboard-div-box {
     display: flex;
@@ -21,15 +21,11 @@
     flex-direction: column;
     height: 100%;
     padding: 10px;
-    overflow-y: scroll;
+    overflow-y: wrap;
     border: black solid 1px;
     background-color: #D9DEDE;
   }
   div.dashboard-div-box > h3 {
     display: flex;
     justify-content: space-evenly;
-  }
-  h3 {
-    display: table;
-    margin: auto;
   }

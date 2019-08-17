@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Dashboard.css"
 import StoryHandler from "../apiManager/StoryHandler"
 import StoryCard from "../stories/StoryCard"
-import { Row } from "reactstrap"
+import { Row, Col } from "reactstrap"
 
 class Dashboard extends Component {
   state = {
@@ -26,15 +26,19 @@ class Dashboard extends Component {
     render() {
       return (
         <React.Fragment>
-          <Row>
+
           <div className="parent-Dash-Div">
             <div className="dashboard-row">
               <div className="dashboard-div-box">
                 <h3>My Story Maps</h3>
                 <div className="dashboard-div">
+                <Row >
                 {this.state.userStories.map(storyObj => (
+                  <Col>
                   <StoryCard key={storyObj.id} story={storyObj} deleteStory={this.deleteStory}/>
+                  </Col>
                 ))}
+                </Row>
                 </div>
               </div>
               {/* <div className="dashboard-div-box">
@@ -46,7 +50,6 @@ class Dashboard extends Component {
               </div> */}
             </div>
           </div>
-          </Row>
         </React.Fragment>
       );
     }

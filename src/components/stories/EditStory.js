@@ -118,11 +118,9 @@ export default class EditStory extends Component {
   storyElementType(storyelement) {
     if (storyelement.type === "img") {
       return (
-        <img
+        <img className="image"
           key={storyelement.id}
           src={storyelement.url}
-          height="250"
-          width="250"
         />
       );
     } else {
@@ -174,7 +172,7 @@ export default class EditStory extends Component {
     return (
       <React.Fragment>
         <section className="editStoryForm">
-          <Container>
+          <div className="stories">
             <Row>
               <Col xs="4">
                 <div className="form-group">
@@ -224,7 +222,7 @@ export default class EditStory extends Component {
                   </Col>
                 ))}
             </Row>
-          </Container>
+          </div>
         </section>
       </React.Fragment>
     );
