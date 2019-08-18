@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
 import "./SketchWidget.css";
+import { Button } from "reactstrap"
 
 const SketchWidget = props => {
 
@@ -25,7 +26,8 @@ const SketchWidget = props => {
       "esri/Map",
       "esri/widgets/Locate",
       "esri/Graphic",
-      "esri/widgets/BasemapGallery"
+      "esri/widgets/BasemapGallery",
+      "esri/widgets/Search"
     ]).then(
       ([
         Sketch,
@@ -34,7 +36,8 @@ const SketchWidget = props => {
         Map,
         Locate,
         Graphic,
-        BasemapGallery
+        BasemapGallery,
+        Search
       ]) => {
        let layer = new GraphicsLayer();
 
@@ -76,6 +79,15 @@ const SketchWidget = props => {
           position: "bottom-right"
         });
 
+        let searchWidget = new Search({
+          view: view
+        });
+
+        // Add the search widget to the top right corner of the view
+        view.ui.add(searchWidget, {
+          position: "top-right"
+        });
+
         // document.addEventListener("click", handleClick)
         view.on("click", function(event) {
           console.log(event.mapPoint.latitude, event.mapPoint.longitude, layer);
@@ -90,12 +102,13 @@ const SketchWidget = props => {
   return (
     <div>
       <div id="viewDiv" ref={elementRef} />
-      <button
+      <Button
+      className="logo"
         id="save-graphics"
         onClick={() => props.handleClick(layer.graphics.items)}
       >
         Save Map
-      </button>
+      </Button>
     </div>
   );
 };

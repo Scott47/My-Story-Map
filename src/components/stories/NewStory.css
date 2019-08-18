@@ -1,5 +1,11 @@
 .basemap-choice {
     max-height: 40%;
     max-width: 40%;
-
+}
+h3 {
+    color: antiquewhite;
+}
+.basemap-choice {
+    color: antiquewhite;
+    /* align-items: center */
 }

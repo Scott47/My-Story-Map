@@ -31,16 +31,16 @@ class NavBar extends Component {
           <div>
             <Nav fill >
               <NavItem>
-                <NavLink href="/" active>My Stories</NavLink>
+                <NavLink className="navthings" href="/" active>My Stories</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/stories/new">Create New Story</NavLink>
+                <NavLink className="navthings" href="/stories/new">Create New Story</NavLink>
               </NavItem>
               <NavItem>
-            <NavLink href="#">Recent Stories</NavLink>
+            <NavLink className="navthings" href="#">Recent Stories</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/welcome" onClick={this.logOut}>Logout</NavLink>
+            <NavLink className="navthings" href="/welcome" onClick={this.logOut}>Logout</NavLink>
           </NavItem>
         </Nav>
       </div>

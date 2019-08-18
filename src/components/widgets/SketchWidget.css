@@ -1,6 +1,25 @@
 #viewDiv {
     padding: 0;
     margin: 0;
-    height: 80vh;
-    width: 65vw;
+    min-height: 95vh;
+    height: 100%;
+    width: 67vw;
   }
+#save-graphics {
+  background-color: rgba(0,0,0,.7);
+  font-weight: 800;
+  color: rgb(182, 180, 178);
+}
+.search,
+.logo {
+  position: absolute;
+  left: 15px;
+}
+
+.search {
+  top: 15px;
+}
+
+.logo {
+  bottom: 30px;
+}

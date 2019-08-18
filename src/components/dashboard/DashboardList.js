@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./Dashboard.css"
 import StoryHandler from "../apiManager/StoryHandler"
 import StoryCard from "../stories/StoryCard"
-import { Row } from "reactstrap"
+import { Row, Col } from "reactstrap"
+
 
 class Dashboard extends Component {
   state = {
@@ -26,27 +27,22 @@ class Dashboard extends Component {
     render() {
       return (
         <React.Fragment>
-          <Row>
           <div className="parent-Dash-Div">
             <div className="dashboard-row">
               <div className="dashboard-div-box">
-                <h3>My Story Maps</h3>
+                <h1>My Story Maps</h1>
                 <div className="dashboard-div">
+                <Row >
                 {this.state.userStories.map(storyObj => (
-                  <StoryCard key={storyObj.id} story={storyObj} deleteStory={this.deleteStory}/>
+                  <Col className="storyCard" key={storyObj.id}>
+                  <StoryCard story={storyObj} deleteStory={this.deleteStory} basemap={storyObj.basemap}/>
+                  </Col>
                 ))}
+                </Row>
                 </div>
               </div>
-              {/* <div className="dashboard-div-box">
-                <h3>My Stories</h3>
-                <div className="dashboard-div">
-                  <MyStoryList {...this.props}
-                  friends={this.props.state.}/>
-                </div>
-              </div> */}
             </div>
           </div>
-          </Row>
         </React.Fragment>
       );
     }

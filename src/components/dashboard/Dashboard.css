@@ -1,7 +1,8 @@
 .parent-Dash-Div {
     display: flex;
     flex-flow: column wrap;
-    width: 100%
+    width: 100%;
+    align-content: center;
   }
 
   .dashboard-row {
@@ -12,24 +13,31 @@
   .dashboard-div-box {
     display: flex;
     flex-direction: column;
-    height: 450px;
+    height: 500px;
     flex: 1;
     margin: 10px;
+    padding: 40px;
+align-self: center;
   }
   .dashboard-div {
     display: flex;
     flex-direction: column;
     height: 100%;
     padding: 10px;
-    overflow-y: scroll;
+    overflow-y: wrap;
     border: black solid 1px;
-    background-color: #D9DEDE;
+    background-color: rgb(115, 119, 119);
   }
-  div.dashboard-div-box > h3 {
+  div.dashboard-div-box > h1 {
     display: flex;
     justify-content: space-evenly;
+    color: antiquewhite;
   }
-  h3 {
-    display: table;
-    margin: auto;
+  .storyCard {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    align-content: center;
+  }
+  .nav-link {
+    color: rgb(122, 23, 23);
   }

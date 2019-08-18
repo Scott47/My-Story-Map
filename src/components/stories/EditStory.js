@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Label, FormGroup, Input } from "reactstrap";
+import { Container, Row, Col, Label, FormGroup, Input, Button } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
 import NewStoryElement from "./NewStoryElement";
 import SketchWidget from "../widgets/SketchWidget";
 import { loadModules } from "esri-loader"
+import "./Story.css"
 
 export default class EditStory extends Component {
   state = {
@@ -118,11 +119,9 @@ export default class EditStory extends Component {
   storyElementType(storyelement) {
     if (storyelement.type === "img") {
       return (
-        <img
+        <img className="image"
           key={storyelement.id}
           src={storyelement.url}
-          height="250"
-          width="250"
         />
       );
     } else {
@@ -174,7 +173,7 @@ export default class EditStory extends Component {
     return (
       <React.Fragment>
         <section className="editStoryForm">
-          <Container>
+          <div className="stories">
             <Row>
               <Col xs="4">
                 <div className="form-group">
@@ -207,9 +206,9 @@ export default class EditStory extends Component {
                     saveStoryElement={this.saveStoryElement}
                   />
                 ) : null}
-                <button id="addElement" onClick={this.addStoryElements}>
-                  +
-                </button>
+                <Button id="addElement" onClick={this.addStoryElements}>
+                  Add to Story
+                </Button>
               </Col>
               {this.props.basemaps
                 .filter(basemap => basemap.id == this.state.basemap)
@@ -224,7 +223,7 @@ export default class EditStory extends Component {
                   </Col>
                 ))}
             </Row>
-          </Container>
+          </div>
         </section>
       </React.Fragment>
     );

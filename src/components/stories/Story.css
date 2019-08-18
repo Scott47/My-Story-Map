@@ -1,10 +1,19 @@
 .stories {
     display: flex;
-    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 0px;
+    background-color: rgb(133, 132, 130);
 }
-
+.storyTitle {
+    text-align: center;
+}
 .card {
-    width: 10rem;
+    width: 15em;
+    height: 10em;
+    background-image: url("/images/AntiqueMap.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
 }
 .card--story {
     width: 10rem;
@@ -20,7 +29,20 @@
 .card-link {
     margin: 12px 0 0 0;
     font-size: 0.7em;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
 }
 .storyelements {
     overflow-y: scroll
 }
+.image {
+    max-width: 100%;
+}
+/* #root {
+    background-color:#68728c;
+} */
+#addElement {
+    display: block;
+}
+
