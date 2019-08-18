@@ -31,7 +31,7 @@ align-self: center;
   div.dashboard-div-box > h1 {
     display: flex;
     justify-content: space-evenly;
-    color: #D9DEDE;
+    color: antiquewhite;
   }
   .storyCard {
     margin-top: 1em;

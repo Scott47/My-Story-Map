@@ -27,6 +27,13 @@
       "password": "green",
       "email": "scottsilver47@gmail.com",
       "id": 4
+    },
+    {
+      "name": "Jimmy",
+      "username": "James",
+      "password": "smoke",
+      "email": "jones@jimmythang.com",
+      "id": 5
     }
   ],
   "basemaps": [
@@ -116,6 +123,13 @@
       "name": "dude",
       "description": "streets-vector",
       "id": 6
+    },
+    {
+      "userId": 5,
+      "basemapId": "1",
+      "name": "Jimmy's Map",
+      "description": "A story about Jimmy",
+      "id": 7
     }
   ],
   "storyelements": [
