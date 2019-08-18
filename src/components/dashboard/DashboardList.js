@@ -4,6 +4,7 @@ import StoryHandler from "../apiManager/StoryHandler"
 import StoryCard from "../stories/StoryCard"
 import { Row, Col } from "reactstrap"
 
+
 class Dashboard extends Component {
   state = {
     userStories: []
@@ -26,11 +27,10 @@ class Dashboard extends Component {
     render() {
       return (
         <React.Fragment>
-
           <div className="parent-Dash-Div">
             <div className="dashboard-row">
               <div className="dashboard-div-box">
-                <h3>My Story Maps</h3>
+                <h1>My Story Maps</h1>
                 <div className="dashboard-div">
                 <Row >
                 {this.state.userStories.map(storyObj => (
@@ -41,13 +41,6 @@ class Dashboard extends Component {
                 </Row>
                 </div>
               </div>
-              {/* <div className="dashboard-div-box">
-                <h3>My Stories</h3>
-                <div className="dashboard-div">
-                  <MyStoryList {...this.props}
-                  friends={this.props.state.}/>
-                </div>
-              </div> */}
             </div>
           </div>
         </React.Fragment>

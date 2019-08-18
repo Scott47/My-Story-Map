@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
 import "./SketchWidget.css";
+import { Button } from "reactstrap"
 
 const SketchWidget = props => {
 
@@ -90,12 +91,13 @@ const SketchWidget = props => {
   return (
     <div>
       <div id="viewDiv" ref={elementRef} />
-      <button
+      <Button
+      className="logo"
         id="save-graphics"
         onClick={() => props.handleClick(layer.graphics.items)}
       >
         Save Map
-      </button>
+      </Button>
     </div>
   );
 };

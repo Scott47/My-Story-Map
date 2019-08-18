@@ -12,10 +12,10 @@ render () {
 
 
   return  (
-    <React.Fragment>
+    <div className="not-root">
       <NavBar />
       <ApplicationViews />
-    </React.Fragment>
+    </div>
   );
 }
 }

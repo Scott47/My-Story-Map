@@ -1,7 +1,8 @@
 .stories {
     display: flex;
-    margin-left: 20px;
-    background-color: #68728c;
+    padding-left: 10px;
+    padding-right: 0px;
+    background-color: rgb(133, 132, 130);
 }
 .storyTitle {
     text-align: center;
@@ -30,7 +31,10 @@
 .image {
     max-width: 100%;
 }
-#root {
+/* #root {
     background-color:#68728c;
+} */
+#addElement {
+    display: block;
 }
 

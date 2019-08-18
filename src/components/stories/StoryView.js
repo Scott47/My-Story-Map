@@ -46,11 +46,6 @@ export default class StoryView extends Component {
   render() {
     return (
       <div>
-        <Link to={`/story/edit/${this.state.story.id}`}>
-          <Button color="link" id={this.state.story.id}>
-            edit story
-          </Button>
-        </Link>
         <div className="stories">
           <Row>
             <Col xs="4">
@@ -73,6 +68,11 @@ export default class StoryView extends Component {
                   />
                 </Col>
               ))}
+            <Link to={`/story/edit/${this.state.story.id}`}>
+              <Button color="link" id={this.state.story.id}>
+                edit story
+              </Button>
+            </Link>
           </Row>
         </div>
       </div>

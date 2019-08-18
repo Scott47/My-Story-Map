@@ -25,7 +25,8 @@
     border: black solid 1px;
     background-color: #D9DEDE;
   }
-  div.dashboard-div-box > h3 {
+  div.dashboard-div-box > h1 {
     display: flex;
     justify-content: space-evenly;
+    color: #D9DEDE;
   }
