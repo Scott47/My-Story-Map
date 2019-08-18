@@ -334,6 +334,24 @@
       },
       "type": "point",
       "id": 18
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 34.14293471630445,
+        "longitude": -84.45824530353003
+      },
+      "type": "point",
+      "id": 19
+    },
+    {
+      "storyId": "1",
+      "geometry": {
+        "latitude": 34.14293471630445,
+        "longitude": -84.45824530353003
+      },
+      "type": "point",
+      "id": 20
     }
   ]
 }

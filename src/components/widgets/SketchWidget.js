@@ -26,7 +26,8 @@ const SketchWidget = props => {
       "esri/Map",
       "esri/widgets/Locate",
       "esri/Graphic",
-      "esri/widgets/BasemapGallery"
+      "esri/widgets/BasemapGallery",
+      "esri/widgets/Search"
     ]).then(
       ([
         Sketch,
@@ -35,7 +36,8 @@ const SketchWidget = props => {
         Map,
         Locate,
         Graphic,
-        BasemapGallery
+        BasemapGallery,
+        Search
       ]) => {
        let layer = new GraphicsLayer();
 
@@ -75,6 +77,15 @@ const SketchWidget = props => {
         });
         view.ui.add(basemapGallery, {
           position: "bottom-right"
+        });
+
+        let searchWidget = new Search({
+          view: view
+        });
+
+        // Add the search widget to the top right corner of the view
+        view.ui.add(searchWidget, {
+          position: "top-right"
         });
 
         // document.addEventListener("click", handleClick)
