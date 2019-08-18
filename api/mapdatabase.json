@@ -54,6 +54,21 @@
       "id": 5,
       "name": "national-geographic",
       "path": "/images/basemap/national-geographic.jpg"
+    },
+    {
+      "id": 6,
+      "name": "hybrid",
+      "path": "/images/basemap/hybrid.jpg"
+    },
+    {
+      "id": 7,
+      "name": "streets-navigation",
+      "path": "/images/basemap/streets-navigation.jpg"
+    },
+    {
+      "id": 8,
+      "name": "terrain",
+      "path": "/images/basemap/terrain.jpg"
     }
   ],
   "locations": [
@@ -87,6 +102,20 @@
       "name": "Joes House",
       "description": "nightmare fuel",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "basemapId": "8",
+      "name": "Homey",
+      "description": "homey's map",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "basemapId": "4",
+      "name": "dude",
+      "description": "streets-vector",
+      "id": 6
     }
   ],
   "storyelements": [

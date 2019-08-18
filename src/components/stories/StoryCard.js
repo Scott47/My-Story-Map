@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "./Story.css"
-import StoryHandler from "../apiManager/StoryHandler"
+import BaseMapHandler from "../apiManager/BaseMapHandler";
+
 
 
 
@@ -11,9 +12,9 @@ export default class StoryCard extends Component {
     return (
         <div key={this.props.story.id} className="card">
         <Link className="nav-link" to={`/stories/${this.props.story.id}`}>
-        <div className="card-body">
+        {/* <div className="card-body"> */}
         <div className="card-title">
-            <h5>{this.props.story.name}</h5>
+            <h2>{this.props.story.name}</h2>
                 {/* <button type="button" className="btn btn-success"
                 onClick={() => {
                 this.props.history.push(`/animals/${this.props.animal.id}/edit`);
@@ -24,7 +25,7 @@ export default class StoryCard extends Component {
                 onClick={() => this.props.deleteAnimal(this.props.animal.id)}
                 className="card-link">Discharge</a> */}
         </div>
-        </div>
+        {/* </div> */}
         </Link>
         <a href="#"
                     onClick={() => {

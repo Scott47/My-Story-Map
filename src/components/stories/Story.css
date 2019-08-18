@@ -8,7 +8,12 @@
     text-align: center;
 }
 .card {
-    width: 10rem;
+    width: 15em;
+    height: 10em;
+    background-image: url("/images/AntiqueMap.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
 }
 .card--story {
     width: 10rem;
@@ -24,6 +29,9 @@
 .card-link {
     margin: 12px 0 0 0;
     font-size: 0.7em;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
 }
 .storyelements {
     overflow-y: scroll

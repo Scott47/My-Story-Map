@@ -34,8 +34,8 @@ class Dashboard extends Component {
                 <div className="dashboard-div">
                 <Row >
                 {this.state.userStories.map(storyObj => (
-                  <Col>
-                  <StoryCard key={storyObj.id} story={storyObj} deleteStory={this.deleteStory}/>
+                  <Col className="storyCard" key={storyObj.id}>
+                  <StoryCard story={storyObj} deleteStory={this.deleteStory} basemap={storyObj.basemap}/>
                   </Col>
                 ))}
                 </Row>
