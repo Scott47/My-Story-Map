@@ -16,6 +16,11 @@ getUserStories: {
         return ApiHandler.getWithQuery("stories", `userId=${userId}`)
     }
 },
+putUserStory: {
+    value: function (editdata) {
+        return ApiHandler.put("stories", editdata)
+    }
+},
 getStoryElements: {
     value: function (storyId) {
         return ApiHandler.getWithQuery("storyelements", `storyId=${storyId}&_sort=orderSequence`)

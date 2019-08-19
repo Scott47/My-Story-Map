@@ -99,8 +99,8 @@
     {
       "userId": 1,
       "basemapId": "1",
-      "name": "Nightmare",
-      "description": "elmstreet",
+      "name": "Nissan Stadium",
+      "description": "A Football Story",
       "id": 2
     },
     {
@@ -155,7 +155,7 @@
       "storyId": 2,
       "orderSequence": 0,
       "userId": 1,
-      "text": "jlkjhlkjhlkjhlkjhlkj\n",
+      "text": "\n",
       "url": "",
       "type": "p",
       "id": 4
@@ -164,7 +164,7 @@
       "storyId": 2,
       "orderSequence": 0,
       "userId": 1,
-      "text": "a;lkdsjf;laksdjf;laksdjf\n",
+      "text": "Gladiators rammed themselves into each other in a display of ignorance and force.\n",
       "url": "",
       "type": "h1",
       "id": 5
@@ -173,7 +173,7 @@
       "storyId": 2,
       "orderSequence": 0,
       "userId": 1,
-      "text": "saldkf;alskdjf lakjdfl;akjsd ;ladkjf;alkdjf \n",
+      "text": "\n",
       "url": "",
       "type": "h1",
       "id": 6
@@ -213,6 +213,15 @@
       "url": "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\n",
       "type": "img",
       "id": 19
+    },
+    {
+      "storyId": 2,
+      "orderSequence": 2,
+      "userId": 1,
+      "text": "This is a paragraph\n",
+      "url": "",
+      "type": "p",
+      "id": 20
     }
   ],
   "mapItems": [
@@ -395,6 +404,24 @@
       },
       "type": "point",
       "id": 20
+    },
+    {
+      "storyId": "2",
+      "geometry": {
+        "latitude": 36.16652123265315,
+        "longitude": -86.77118200357766
+      },
+      "type": "point",
+      "id": 21
+    },
+    {
+      "storyId": "2",
+      "geometry": {
+        "latitude": 36.16761527390726,
+        "longitude": -86.76857824917647
+      },
+      "type": "point",
+      "id": 22
     }
   ]
 }
