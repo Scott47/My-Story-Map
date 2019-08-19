@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
 import { Container, Row, Col, Label, FormGroup, Input, Button } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
 import NewStoryElement from "./NewStoryElement";
@@ -18,7 +19,25 @@ export default class EditStory extends Component {
     layer: {}
   };
 
+updateStoryTitle = () => {
+const stateToChange = {
+      userId: +sessionStorage.getItem("userId"),
+      basemapId: this.state.basemap,
+      name: this.state.storyTitle,
+      description: this.state.subtitle,
+      id: this.props.match.params.storyId
+}
+StoryHandler.putUserStory(stateToChange).then( () =>
+StoryHandler.get(this.props.match.params.storyId).then(story => {
+  console.log(story);
+  this.setState({
+    storyTitle: story.name,
+    subtitle: story.description,
+    basemap: story.basemapId
+  });
+}))
 
+}
 
   handleClick = items => {
     console.log(items);
@@ -184,6 +203,7 @@ export default class EditStory extends Component {
                     onChange={this.handleFieldChange}
                     id="storyTitle"
                     value={this.state.storyTitle}
+                    onBlur={this.updateStoryTitle}
                   />
                 </div>
                 <div className="form-group">
@@ -194,6 +214,7 @@ export default class EditStory extends Component {
                     onChange={this.handleFieldChange}
                     id="subtitle"
                     value={this.state.subtitle}
+                    onBlur={this.updateStoryTitle}
                   />
                 </div>
                 {this.state.storyelements.map(storyelement => {
@@ -209,6 +230,7 @@ export default class EditStory extends Component {
                 <Button id="addElement" onClick={this.addStoryElements}>
                   Add to Story
                 </Button>
+                <Link to={`/stories/${this.props.match.params.storyId}`}>View</Link>
               </Col>
               {this.props.basemaps
                 .filter(basemap => basemap.id == this.state.basemap)
