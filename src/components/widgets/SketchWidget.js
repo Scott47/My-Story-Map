@@ -52,7 +52,7 @@ const SketchWidget = props => {
           container: "viewDiv",
           map: map,
           center: [-86.76796, 36.174465],
-          zoom: 14,
+          zoom: 12,
           ui: {
             components: ["attribution", "zoom", "compass", "locate"] // empty the UI, except for attribution
           }

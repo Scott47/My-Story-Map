@@ -27,6 +27,7 @@ const stateToChange = {
       description: this.state.subtitle,
       id: this.props.match.params.storyId
 }
+
 StoryHandler.putUserStory(stateToChange).then( () =>
 StoryHandler.get(this.props.match.params.storyId).then(story => {
   console.log(story);
@@ -241,7 +242,6 @@ StoryHandler.get(this.props.match.params.storyId).then(story => {
                       handleClick={this.handleClick}
                       layer={this.state.layer}
                     />
-
                   </Col>
                 ))}
             </Row>

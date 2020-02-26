@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StoryHandler from "../apiManager/StoryHandler";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Story.css";
 import MapGraphic from "./MapGraphic";

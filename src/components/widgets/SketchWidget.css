@@ -4,6 +4,7 @@
     min-height: 95vh;
     height: 100%;
     width: 67vw;
+    float: right;
   }
 #save-graphics {
   background-color: rgba(0,0,0,.7);
