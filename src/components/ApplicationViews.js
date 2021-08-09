@@ -10,7 +10,7 @@ import StoryView from "./stories/StoryView"
 import EditStory from "./stories/EditStory"
 import DashboardList from "./dashboard/DashboardList"
 import NewStory from './stories/NewStory';
-import "./nav/NavBar.css"
+import "./nav/Navbar.css"
 
 class ApplicationViews extends Component {
   state = {
@@ -100,13 +100,6 @@ class ApplicationViews extends Component {
               <NewStory basemaps={this.state.basemaps} {...props} />
             )
           }} />
-          {/* <Route exact path="/stories" render={props => {
-            return(
-              <div style={{ width: '100vw', height: '100vh' }}>
-                  <StoryList stories={this.state.stories} basemaps={this.state.basemaps}/>
-                  </div>
-            )
-          }} /> */}
           <Route path="/story/edit/:storyId(\d+)" render={props => {
             return (
               <EditStory basemaps={this.state.basemaps} {...props} />

@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from "reactstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./NavBar.css"
+import "./Navbar.css"
 
 
 class NavBar extends Component {

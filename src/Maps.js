@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ApplicationViews from './components/ApplicationViews';
-import NavBar from "./components/nav/NavBar"
+import ApplicationViews from './Components/ApplicationViews';
+import NavBar from "./Components/nav/NavBar"
 import "./Map.css"
 
 
