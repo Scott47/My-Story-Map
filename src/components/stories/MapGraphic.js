@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
-// import EditStory from './EditStory'
 import StoryHandler from "../apiManager/StoryHandler";
 
 const MapGraphic = props => {
   console.log(props);
 
   const elementRef = useRef();
-  const [graphic, setGraphic] = useState(null);
+  // const [graphic, setGraphic] = useState(null);
   const [points, setPoints] = useState(props.points);
   const mounted = useRef();
 
@@ -77,10 +76,6 @@ const MapGraphic = props => {
         });
       })
       .catch(err => console.error(err));
-
-    // return function cleanup() {
-    //     // view.graphics.remove(graphic);
-    // };
   }, []);
   return <div id="viewDiv" ref={elementRef.current} />;
 };
