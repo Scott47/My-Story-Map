@@ -77,6 +77,7 @@ export default class NewStory extends Component {
                 <label htmlFor={basemap.name}>{basemap.name}</label>
                 <br />
                 <img
+                alt={basemap.name}
                   id={basemap.name}
                   src={basemap.path}
                   className="basemap-choice"

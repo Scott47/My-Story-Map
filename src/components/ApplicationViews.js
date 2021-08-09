@@ -22,7 +22,6 @@ class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-    const newState = {}
     this.setState({ currentUserId: sessionStorage.getItem("userId") })
 
     UserHandler.getAll()

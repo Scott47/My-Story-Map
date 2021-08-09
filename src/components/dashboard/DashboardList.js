@@ -17,7 +17,6 @@ class Dashboard extends Component {
     }))
 
   componentDidMount() {
-    const newState = {}
     StoryHandler.getUserStories(sessionStorage.getItem("userId"))
     .then(currentUserStories => {console.log(currentUserStories)
       this.setState({ userStories: currentUserStories })

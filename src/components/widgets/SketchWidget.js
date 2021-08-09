@@ -8,14 +8,8 @@ const SketchWidget = props => {
   const [layer, setLayer] = useState(props.layer);
 
   const elementRef = useRef();
-  // const handleClick = (e) => {
-  //   if (elementRef.current.contains(e.currentTarget)) {
-  //     console.log(e)
-  //     return;
-  //   }
-  // }
+
   let view;
-  // let layer=null;
   useEffect(() => {
     console.log(layer)
     setLayer(props.layer)
@@ -94,10 +88,7 @@ const SketchWidget = props => {
         });
       }
     );
-    // return () => {
-
-    //   document.removeEventListener("click", handleClick);
-    // };
+   
   }, []);
   return (
     <div>

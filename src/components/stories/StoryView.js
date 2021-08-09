@@ -15,22 +15,19 @@ export default class StoryView extends Component {
   storyElementType(storyelement) {
     if (storyelement.type === "img") {
       return (
-        <img className="image" key={storyelement.id} src={storyelement.url} />
+        <img className="image" alt="story element" key={storyelement.id} src={storyelement.url} />
       );
     } else {
-      {
         return (
           <storyelement.type id={storyelement.id} key={storyelement.id}>
             {storyelement.text}
           </storyelement.type>
         );
-      }
     }
   }
 
   componentDidMount() {
     console.log("props", this.props);
-    const newState = {};
     StoryHandler.getStoryElements(this.props.match.params.storyId).then(
       storyelements => this.setState({ storyelements: storyelements })
     );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
-import { Container, Row, Col, Label, FormGroup, Input, Button } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 import StoryHandler from "../apiManager/StoryHandler";
 import NewStoryElement from "./NewStoryElement";
 import SketchWidget from "../widgets/SketchWidget";
@@ -129,7 +129,7 @@ StoryHandler.get(this.props.match.params.storyId).then(story => {
     }
     let biggestNum = Math.max(...this.orderElements());
     console.log(biggestNum);
-    if (biggestNum == null || biggestNum == 0) {
+    if (biggestNum === null || biggestNum === 0) {
       return 1;
     } else {
       return biggestNum;
@@ -140,6 +140,7 @@ StoryHandler.get(this.props.match.params.storyId).then(story => {
     if (storyelement.type === "img") {
       return (
         <img className="image"
+        alt="story element type"
           key={storyelement.id}
           src={storyelement.url}
         />
@@ -234,7 +235,7 @@ StoryHandler.get(this.props.match.params.storyId).then(story => {
                 <Link to={`/stories/${this.props.match.params.storyId}`}>View</Link>
               </Col>
               {this.props.basemaps
-                .filter(basemap => basemap.id == this.state.basemap)
+                .filter(basemap => basemap.id === this.state.basemap)
                 .map(basemapx => (
                   <Col key={this.state.basemap} xs="8">
                     <SketchWidget
